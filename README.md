@@ -94,13 +94,14 @@
 - build toolchain: yarn, parcel & GitHub Pages
   - if parcel is broken, use webpack built into the standard react-create-app as long as it's compatible with GitHub Pages
 
-todo:
-- which components, styling and toolchain will i need for an embedded Jupyter notebook?
-
 note:
 - ^these choices don't have to be ideal because i'm not looking for frontend jobs anymore. they just have to work.
-  
 
+- embedded jupyter notebook package options:
+  - `JupyterLite` by JuptyerLab. ships with Python kernel powered by Pyodide and IPython. its REPL runs entirely in the browser. posted in Mar 2022: (https://blog.jupyter.org/jupyter-everywhere-f8151c2cc6e8) (been building it for at least 3 years)
+  - `nbconvert` is a Python package that allows you to convert Jupyter notebooks to other formats, such as HTML, PDF, and Markdown. You can use nbconvert to embed a Jupyter notebook in a static website or blog post.
+  - `nteract` is a Python package that allows you to create interactive web applications from Jupyter notebooks. You can use nteract to embed a Jupyter notebook in a web application, such as a dashboard or a data visualization tool.
+  - `papermill` is a Python package that allows you to execute Jupyter notebooks as Python scripts. You can use papermill to embed a 
 
 
 
