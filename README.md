@@ -81,3 +81,51 @@
 
 - apply to ~6 semiconductor design (compiler) engineer jobs by june 1 (3 months from now)
 - apply to ~9 more semiconductor design (compiler) engineer jobs by aug 1 (5 months from now)
+
+
+
+
+## tech stack (frontend)
+
+- components/styling:
+  - see if i can use old portfolio's HTML & CSS via Bootstrap & Sass
+  - otherwise, use Google's Material Design components will be enough for relatively static site
+  - if i need dynamic components, then React if I can re-configure the build toolchain
+- build toolchain: yarn, parcel & GitHub Pages
+  - if parcel is broken, use webpack built into the standard react-create-app as long as it's compatible with GitHub Pages
+
+todo:
+- which components, styling and toolchain will i need for an embedded Jupyter notebook?
+
+note:
+- ^these choices don't have to be ideal because i'm not looking for frontend jobs anymore. they just have to work.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
