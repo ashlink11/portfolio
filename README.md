@@ -96,14 +96,17 @@
 
 note:
 - ^these choices don't have to be ideal because i'm not looking for frontend jobs anymore. they just have to work.
-
-- embedded jupyter notebook package options:
-  - `JupyterLite` by JuptyerLab. ships with Python kernel powered by Pyodide and IPython. its REPL runs entirely in the browser. posted in Mar 2022: (https://blog.jupyter.org/jupyter-everywhere-f8151c2cc6e8) (been building it for at least 3 years)
-  - `nbconvert` is a Python package that allows you to convert Jupyter notebooks to other formats, such as HTML, PDF, and Markdown. You can use nbconvert to embed a Jupyter notebook in a static website or blog post.
-  - `nteract` is a Python package that allows you to create interactive web applications from Jupyter notebooks. You can use nteract to embed a Jupyter notebook in a web application, such as a dashboard or a data visualization tool.
-  - `papermill` is a Python package that allows you to execute Jupyter notebooks as Python scripts. You can use papermill to embed a 
+- the page should be mostly static with minimal dynamic elements (no embedded jupyter notebook like i had researched)
 
 
+## ui/ux
+
+- easily be able to copy code sections from my site and link to a free online Jupyter notebook to test code
+- one page for each project I'm demoing (basically a graphics-based minimal-text code walkthrough but also for non-technical people)
+  - one LLVM project (c++)
+  - one MLIR project 
+  - one Modular project (mojo (python))
+  - one CUDA project 
 
 
 
