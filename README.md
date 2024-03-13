@@ -4,7 +4,7 @@
 
 - high-level models and corresponding low-level code
 
-####: high-level:
+#### high-level:
 
 - TL;DRs & minimalistic text content always
 - original lucidchart diagrams (w simple titles) for:
@@ -42,7 +42,7 @@
     - Y2K aesthetic (because good to know when cyberbougie-esque palette started and how it evolved; also interesting themes)
     - zen-x (reminds me of eco-beige yet much more calm and feels like how i feel when i can get in deep flow with code/work)
 
-####: low-level:
+#### low-level:
 
 - TL;DRs & minimalistic text content always
 - at least one portfolio page with a Jupyter notebook:
@@ -106,8 +106,34 @@ note:
   - one LLVM project (c++)
   - one MLIR project 
   - one Modular project (mojo (python))
-  - one CUDA project 
+  - one CUDA project
 
+
+ ## mid-level frontend plan
+
+consider all these at same time:
+- build toolchain
+- v0.dev can create the UI & UX components i want
+- nice UI design (diff design for each project?)
+
+## mid-level backend plan (today is Mar 13, 2024)
+
+- plan complexity levels and skills demoed for each
+- plan order in which i do them
+- plan how much time dedicated to each and deadlines
+  - one LLVM project (c++) (ideal: 2 more weeks full focus)
+    - ideal: done April 1 (done in 2 weeks) 
+    - deadline: June 1 (done in 10 weeks)
+  - one MLIR project (ideal: 1 month full focus)
+    - ideal: done May 1 (start in 2 weeks; done 6 weeks from now) 
+    - deadline: June 1 (done in 10 weeks)
+  - one Modular project (mojo (python)) (ideal: 1 month full focus)
+    - ideal: done June 1 or at least show progress page 1/2 done 
+    - realistic: done July 1
+    - deadline: August 1
+  - one CUDA project (ideal: 1 month full focus)
+    - ideal: at least show CUDA page in progress by June 1
+    - deadline: August 1
 
 
 
