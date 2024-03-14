@@ -1,10 +1,19 @@
 # portfolio
 
-## tech plan:
+## overall strategy:
 
-- high-level models and corresponding low-level code
+- meta-level
+- high-level
+- mid-level
+- and corresponding low-level code
 
-#### high-level:
+
+
+# meta-level:
+
+## meta-level frontend ui/ux and content
+
+#### ui/ux
 
 - TL;DRs & minimalistic text content always
 - original lucidchart diagrams (w simple titles) for:
@@ -42,7 +51,20 @@
     - Y2K aesthetic (because good to know when cyberbougie-esque palette started and how it evolved; also interesting themes)
     - zen-x (reminds me of eco-beige yet much more calm and feels like how i feel when i can get in deep flow with code/work)
 
-#### low-level:
+#### personal bio plan:
+
+- icons for all langs i know
+- quick bio
+- photo
+- links:
+  - programming-based twitter
+  - linkedin
+  - my github home page
+ 
+
+
+
+## meta-level backend
 
 - TL;DRs & minimalistic text content always
 - at least one portfolio page with a Jupyter notebook:
@@ -63,29 +85,15 @@
 
 
 
-## personal bio plan:
-
-- icons for all langs i know
-- quick bio
-- photo
-- links:
-  - programming-based twitter
-  - linkedin
-  - my github home page
 
 
 
-## timeline: (interview process is about 3-4 months for big tech)
-(created: Mar 9, 2024)
-(last updated: """ )
-
-- apply to ~6 semiconductor design (compiler) engineer jobs by june 1 (3 months from now)
-- apply to ~9 more semiconductor design (compiler) engineer jobs by aug 1 (5 months from now)
+# high-level plans (frontend and backend)
 
 
+## high-level frontend tech stack & ui/ux
 
-
-## tech stack (frontend)
+#### tech stack
 
 - components/styling:
   - see if i can use old portfolio's HTML & CSS via Bootstrap & Sass
@@ -98,46 +106,124 @@ note:
 - ^these choices don't have to be ideal because i'm not looking for frontend jobs anymore. they just have to work.
 - the page should be mostly static with minimal dynamic elements (no embedded jupyter notebook like i had researched)
 
-
-## ui/ux
+#### ui/ux
 
 - easily be able to copy code sections from my site and link to a free online Jupyter notebook to test code
 - one page for each project I'm demoing (basically a graphics-based minimal-text code walkthrough but also for non-technical people)
   - one LLVM project (c++)
-  - one MLIR project 
-  - one Modular project (mojo (python))
+  - one Modular/MLIR project 
   - one CUDA project
+- great non-techincal report for portfolio website page with:
+   - excel graphs/charts w lucidchart aesthetic, etc.
+   - architecture map
+   - copyable code
+   - link to Jupyter-notebook-type sites for proof
 
 
- ## mid-level frontend plan
+## high-level backend plan:
+
+#### project progression ideas: (today is Mar 14, 2024)
+  
+1. llvm project (SIMT?)
+   - c++
+   - extremely basic but good representation of the c++ standard library
+     - study quick map of c++ std for:
+       - I/O file read/write
+       - class/object
+       - list
+       - data types to demo the stack & heap
+       - recursive loop if possible
+       - basic search algo DFS/BFS recursion and find the exit condition
+     - should correspond to basic LLVM IR
+     - still study std LLVM IR though.
+3. modular project (SIMT?)
+   - mojo(python)/MLIR IR
+   - MNIST dataset unless i can think of something better
+     - can i apply current models to this?
+     - which is the best current singular model to use for this?
+   - try to make the project run in the Modular browser env for proving the project
+4. cuda project
+   - nvcc/ptx (parallel thread execution) (SIMT?)
+   - choose: c/c++ or python/PyCUDA
+     - do i want to demonstrate just my IR experience or possibly also ML experience?
+   - can i do an integration of all best models thus far?
+   - search kaggle for an already-cleaned dataset and then do
+     - basic fundamental principles
+     - feature engineering
+     - regression
+     - modeling
+   
+#### notes:
+- diff repo for each one
+- where does SIMT apply?
+
+- plan complexity levels and skills demoed for each
+- plan order in which i do them
+- plan how much time dedicated to each and deadlines
+- 3 projects total because combine Modular/MLIR
+
+#### time left:
+
+2.5 months till first round of applications:
+- last 2 weeks mar
+- april
+- may
+
+then 1.5 more months till second round of applications:
+- june
+- first 2 weeks july 
+
+#### project timelines
+
+- LLVM project 
+  - ideal:
+    - total time: 4 weeks
+    - finished by: April 30
+  - deadline: May 31
+
+- Modular project 
+  - ideal:
+    - total time: 6 weeks
+    - finished by: May 31
+  - deadline: May 31 or July 15 if i'm really struggling
+
+- CUDA project
+  - ideal:
+    - total time: 6 weeks
+    - finished by: July 15
+  - deadline: July 15 (to begin final applications Aug 1)
+ 
+
+
+
+
+
+# mid-level plans
+
+## mid-level frontend plan
 
 consider all these at same time:
 - build toolchain
 - v0.dev can create the UI & UX components i want
 - nice UI design (diff design for each project?)
 
-## mid-level backend plan (today is Mar 13, 2024)
 
-- plan complexity levels and skills demoed for each
-- plan order in which i do them
-- plan how much time dedicated to each and deadlines
-  - one LLVM project (c++) (ideal: 2 more weeks full focus)
-    - ideal: done April 1 (done in 2 weeks) 
-    - deadline: June 1 (done in 10 weeks)
-  - one MLIR project (ideal: 1 month full focus)
-    - ideal: done May 1 (start in 2 weeks; done 6 weeks from now) 
-    - deadline: June 1 (done in 10 weeks)
-  - one Modular project (mojo (python)) (ideal: 1 month full focus)
-    - ideal: done June 1 or at least show progress page 1/2 done 
-    - realistic: done July 1
-    - deadline: August 1
-  - one CUDA project (ideal: 1 month full focus)
-    - ideal: at least show CUDA page in progress by June 1
-    - deadline: August 1
+## mid-level backend plan (today is mar 15, 2024)
+
+todo next:
+1. simplify high-level backend plan
+2. start going on low-level backend plan
+3. work on backend M-F
+4. take a look at frontend on the weekends
 
 
 
 
+# low-level plans
+
+## low-level frontend plan 
+
+## low-level backend plan 
 
 
 
