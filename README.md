@@ -210,13 +210,41 @@ consider all these at same time:
 
 ## mid-level backend plan (today is mar 15, 2024)
 
-todo next:
-1. simplify high-level backend plan
+todo list:
+1. simplify high-level backend plan for project one (made progress Fri Mar 15)
 2. start going on low-level backend plan
 3. work on backend M-F
 4. take a look at frontend on the weekends
 
+1. llvm project
+   - c++ [c++ standard library](https://en.cppreference.com/w/cpp/header)
+   - extremely basic but good representation of the c++ standard library
+     - study quick map of c++ std for:
+       - I/O file read/write
+       - class/object
+       - list
+       - data types to demo the stack & heap
+       - recursive loop if possible
+       - basic search algo DFS/BFS recursion and find the exit condition
+     - should correspond to basic LLVM IR
+       - C++ LLVM metaphor concepts:
+         - abstraction/standardization - abstract away low-level details for portable code; high-level abstraction of SEMANTICS
+         - generics/templates which are data structures and algos for many data ttypes
+         - modularity/composition (of containers, algos, I/O) to create complexity (IR: basic blocks, instructions, functions)
+         - optimizations/transformation  
+     - still study std LLVM IR though. :::
+       - basic blocks (single entry point & single exit point (except for branches, loops, etc.))
+       - instructions (arith ops, memory accesses, function calls and control flow inst) mnemonic codes - SSA form (Static Single Assignment)
+       - functions (name and signature (return type and params) and body) (`define`)
+       - values: constants, vars, and results ::: are types
+       - data types: int, float, vect, pointers, structures, arrays and user-defined types
+       - global vars accessed from any function (starts with `@`)
 
+notes:
+  - CUDA can use LLVM to create a SIMT-execution-model-style ISA ("instructions for managing threads, accessing memory, performing arithmetic and logical operations, and controlling execution flow.")
+  - how do basic blocks handle control flow instructions? (branches between basic blocks have explicit instructions)
+  - SSA: "SSA is a form of intermediate representation used in compiler design, particularly in optimizing compilers. In SSA form, each variable is assigned exactly once, and each use of the variable refers to that specific definition. This property simplifies data-flow analysis and enables certain optimizations such as common subexpression elimination and dead code elimination."
+  - ISA "encompasses the set of instructions that a processor architecture supports, along with their encoding, semantics, and behavior"
 
 
 # low-level plans
