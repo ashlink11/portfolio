@@ -208,7 +208,7 @@ consider all these at same time:
 - nice UI design (diff design for each project?)
 
 
-## mid-level backend plan (today is mar 15, 2024)
+## mid-level backend plan 
 
 todo list:
 1. simplify high-level backend plan for project one (made progress Fri Mar 15)
@@ -240,6 +240,7 @@ todo list:
        - data types: int, float, vect, pointers, structures, arrays and user-defined types
        - global vars accessed from any function (starts with `@`)
 
+      
 notes:
   - CUDA can use LLVM to create a SIMT-execution-model-style ISA ("instructions for managing threads, accessing memory, performing arithmetic and logical operations, and controlling execution flow.")
   - how do basic blocks handle control flow instructions? (branches between basic blocks have explicit instructions)
@@ -251,7 +252,47 @@ notes:
 
 ## low-level frontend plan 
 
+- try out v0.dev next
+
 ## low-level backend plan 
+
+1. llvm project 
+  - c++ content: primitive var cast to object var in a list in an object sounds ideal (no read/write needed cause I'm not a networking specialist)
+  - c++ algo options:
+    - (no) RNN recursive neural networks - recursive algo
+    - (no) GBMs gradient boosting machines - tree-based algos (also decision trees, random forest, 
+    - (no) GNNs and GCNs graph neural networks and graph convoluational networks - graph algos
+    - transformer: (graph algo)
+      - core component: self-attention mechanism
+        - attention scores via dependencies & relationships
+        - then compute weighted sums of the input embeddings, generating context-aware representations for each word
+      - multiple layers processed in parallel (parallelism / concurrency / multithreading / SIMT, PTX, etc.)
+      - essentially filter algos ?
+      - long-range dependencies which RNNs couldnt
+      - in NLP, token in sequence are nodes in graph, attention scores and edge weights btw all pairs
+      - can then capture hierarchical structures efficiently
+  - llvm ir: use 3 basic blocks to show how entry and exit would work in that case
+    - DFS and BFS both can search graphs, doesnt matter which one, whatever works w the program
+    - non-technical semantics: knowledge graph of relationship strength between objects then make a hierarchy
+    - no generics is fine
+    - can discuss modularity and composition (see above section for details)
+    - optimizations: on purpose, use the type of loop that can be optimized 
+    - transformation: ^then show how llvm ir transforms the loop
+    - might need like 4 basic blocks actually for 6 relationships and one four-word sentence (then use code for input and output with slight modifications)
+    - will include arith ops for wts, memory access of course (registers, cache, RAM ideally but maybe save that for projects 2 or 3)
+    - will include values (vars and results)
+    - make sure to use pointer but its fine w/o array and struct actually for this one
+    - no global var is fine i think till later
+    - the function calls will be the node creations and the search
+    - the control flow is the loop
+    - make sure to map to SSA and talk about importance of explicit single assignments in terms of basic blocks and the looping
+       
+next:
+- compile a c++ llvm cmake config asap or rapidly pivot to compiling it somehow in browser, etc.
+- new repo and write out the algo in c++
+- make the config
+- examine the IR with the tooling
+- get it on the frontend asap
 
 
 
