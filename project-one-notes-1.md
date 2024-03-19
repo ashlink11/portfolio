@@ -89,3 +89,67 @@ SWIG is a tool that can be used to generate Python bindings for C and C++ code. 
 
 10. Cython:
 Cython is a Python language extension that allows you to write Python code that is compiled to C. This can significantly improve the performance of your Python code. Cython is a good choice for Python code that is computationally intensive.
+
+
+- actually, best packages for ML transformers?
+
+The best Python package for transformers is the Hugging Face Transformers library. It is a state-of-the-art NLP library that provides a wide range of pre-trained models for a variety of tasks, including text classification, question answering, summarization, and translation. The library is easy to use and provides a comprehensive documentation.
+Here are some of the key features of the Hugging Face Transformers library:
+- Wide range of pre-trained models: The library provides a wide range of pre-trained models for a variety of NLP tasks, including text classification, question answering, summarization, and translation. These models have been trained on large datasets and can be used to achieve state-of-the-art results on a variety of tasks.
+- Easy to use: The library is easy to use and provides a comprehensive documentation. The library provides a number of tutorials and examples that can be used to get started quickly.
+- Active community: The library has an active community of users and developers. This means that there is a wealth of resources available to help users get the most out of the library.
+- Regular updates: The library is regularly updated with new features and bug fixes. This means that users can be confident that they are using the latest and greatest version of the library.
+
+- Transformers is backed by the three most popular deep learning libraries — `Jax`, `PyTorch` and `TensorFlow` — with a seamless integration between them.
+- PyTorch is ideal for research and small-scale projects prioritizing flexibility, experimentation and quick editing capabilities for models. TensorFlow is ideal for large-scale projects and production environments that require high-performance and scalable models.
+
+- how can i design Project One (this project) so it's ready for Project Two (mojo/mlir)?
+- Project Two additional notes (more than the README):
+  - low-level IR in Mojo (implement my own GPU primitives) https://docs.modular.com/mojo/notebooks/BoolMLIR
+  - Jax: "accelerator-oriented array computation and program transformation, designed for high-performance numerical computing"
+  - Mojo language marries Python and MLIR for AI development: https://www.infoworld.com/article/3695588/mojo-language-marries-python-and-mlir-for-ai-development.html
+  - key Mojo
+    - progressive types
+    - parallelization
+    - ownership and borrow-checker
+    - manual memory management
+    - zero-cost abstractions
+    - integrated auto-tuning ******* use this 
+  - Lattner Lex Fridman will mojo replace PyTorch and Tensorflow: https://www.youtube.com/watch?v=2Vz2X9I5Z4k
+  - Modular yt channel Introduction to Tensors in Mojo🔥: https://www.youtube.com/watch?v=3OWkXNdkx8E
+  - why mojo: https://docs.modular.com/mojo/why-mojo
+    - "building our platform to unify the world's ML/AI infrastructure, we realized that programming across the entire stack was too complicated. Plus, we were writing a lot of MLIR by hand and not having a good time."
+    - "What we wanted was an innovative and scalable programming model that could target accelerators and other heterogeneous systems that are pervasive in the AI field. This meant a programming language with powerful compile-time metaprogramming, integration of adaptive compilation techniques, caching throughout the compilation flow, and other features that are not supported by existing languages."
+   
+- takeaways:
+  - okay i wont be doing ^that till Project Two
+  - so Project One should just be compiling LLVM and high-level/low-level IR analysis and then compare it later to Mojo/MLIR
+  - alright, now I can continue with Project One
+
+- next step:
+  - CMake desktop app? (then what would be the target?)
+  - CMake config with git clone llvm as target?
+  - CMake config with native llvm as target? change $PATH
+  - ^this has been super difficult. but at least i've studied it a tonnnnn
+
+
+# DEADLINE: this FRIDAY March 22 I have to compile the simplest c++ program possible with LLVM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
