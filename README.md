@@ -1,12 +1,13 @@
 # portfolio
 
+- current progress in [project one doc](./project-one-notes-1.md)
+
 ## overall strategy:
 
 - meta-level
 - high-level
 - mid-level
 - and corresponding low-level code
-
 
 
 # meta-level:
