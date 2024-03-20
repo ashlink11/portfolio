@@ -135,8 +135,20 @@ Here are some of the key features of the Hugging Face Transformers library:
 
 # DEADLINE: this FRIDAY March 22 I have to compile the simplest c++ program possible with LLVM
 
+# next steps: (wed mar 20)
 
+- i learned yesterday that CUDA uses CMake to compile so this will be worth it
 
+tring to keep in mind all the factors as i'm trying. common errors:
+
+- Missing Dependencies: correctly installed on your system and properly detected by CMake
+- Version Compatibility: Ensure that you are using compatible versions of LLVM and its dependencies. Sometimes, certain LLVM features or functionalities might not be supported in older or newer versions, leading to configuration issues.
+- CMake Cache: Sometimes, CMake cache files can cause problems. Try deleting the CMake cache (typically named CMakeCache.txt) in your build directory and re-running CMake to regenerate it.
+- Build Configuration: LLVM supports various build configurations, such as Debug, Release, RelWithDebInfo, and MinSizeRel. Make sure you are configuring CMake with the appropriate build configuration for your needs.
+- Platform-specific Issues: LLVM might have platform-specific requirements or issues. Ensure that you are following any platform-specific instructions or recommendations provided by the LLVM project.
+- Compiler Compatibility: Ensure that your compiler is compatible with LLVM. LLVM often requires a modern C++ compiler (e.g., Clang or a recent version of GCC).
+- CMake Options: LLVM provides various CMake options to customize the build process. Make sure you are setting these options appropriately for your requirements.
+- Check most recent official docs from LLVM and CMake
 
 
 
