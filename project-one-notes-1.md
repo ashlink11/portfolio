@@ -151,7 +151,8 @@ tring to keep in mind all the factors as i'm trying. common errors:
 - Check most recent official docs from LLVM and CMake
 
 
-
+# next steps: (fri mar 21)
+- need time honestly for my schoolwork till monday
 
 
 
