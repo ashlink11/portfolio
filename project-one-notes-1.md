@@ -133,7 +133,7 @@ Here are some of the key features of the Hugging Face Transformers library:
   - ^this has been super difficult. but at least i've studied it a tonnnnn
 
 
-# DEADLINE: this FRIDAY March 22 I have to compile the simplest c++ program possible with LLVM
+# DEADLINE: (pushing this back a week) next FRIDAY March 29 I have to compile the simplest c++ program possible with LLVM
 
 # next steps: (wed mar 20)
 
