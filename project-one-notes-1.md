@@ -154,14 +154,118 @@ tring to keep in mind all the factors as i'm trying. common errors:
 # next steps: (fri mar 21)
 - need time honestly for my schoolwork till monday
 
+# next steps: (sat mar 22)
+- use CMake macOS GUI
+  - i have version 3.29.0-rc3
+  - note: this c++ code includes QtWidgets package
+  - directions:
 
 
 
+---
+
+CMakeLists.txt example:
+```
+cmake_minimum_required(VERSION 3.10)
+project(LLVMProgram)
+
+find_package(LLVM REQUIRED CONFIG)
+
+include_directories(${LLVM_INCLUDE_DIRS})
+add_definitions(${LLVM_DEFINITIONS})
+
+add_executable(LLVMProgram src/main.cpp)
+target_link_libraries(LLVMProgram ${llvm_libs})
+
+```
 
 
+directory structure:
+```css
+project_directory/
+│
+├── .vscode/
+│   ├── c_cpp_properties.json
+│   └── settings.json
+│
+├── src/
+│   └── main.cpp
+│
+└── CMakeLists.txt
+```
+
+The c_cpp_properties.json file is typically used for configuring C/C++ IntelliSense settings in Visual Studio Code. It should be placed in the .vscode directory within your project directory. If the .vscode directory doesn't exist, you can create it manually.
+
+You can create or modify the c_cpp_properties.json file to include the necessary include paths for your project. For example:
+
+```json
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/path/to/llvm/include"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
+```
+
+Replace "/path/to/llvm/include" with the actual path to the directory containing LLVM header files on your system.
+
+Once you've placed the c_cpp_properties.json file in the .vscode directory and configured it properly, Visual Studio Code should use these settings for C/C++ IntelliSense.
+
+.vscode/settings.json:
+
+```json
+{
+    "cmake.configureSettings": {
+        "CMAKE_CXX_COMPILER": "/usr/bin/clang++",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+    }
+}
+```
 
 
+llvm should have been installed this way:
 
+```bash
+brew install llvm
+```
+
+
+in summary:
+
+> Building and Running:
+> Open the project directory in Visual Studio Code.
+> Create the .vscode directory if it doesn't exist.
+> Create or update c_cpp_properties.json and settings.json files as shown above. Disable the c++/cmake vscode plugins, etc.
+> Create the CMakeLists.txt file with the content provided.
+> Write your LLVM program in src/main.cpp.
+> Open the CMake macOS UI application.
+> Set the source directory to your project directory and the build directory to a subdirectory (e.g., build).
+> Click "Configure" and select your preferred generator. (e.g., "Unix Makefiles" for building with Make, or "Xcode" for building with Xcode).
+> Click "Generate" to generate the build files.
+> Use the CMake macOS UI application to build the project.
+> After successful build, execute the generated executable file to run the LLVM program.
+
+notes:
+- XCode or Unix Makefiles?
+- XCode app is not in my applications folder and i'm not sure why not.
+
+notes for next steps:
+- try Unix Makefiles generator first, otherwise `xcode-select --install`, etc.
 
 
 
