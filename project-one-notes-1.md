@@ -271,9 +271,27 @@ next steps: (tues mar 26)
   - try Unix Makefiles generator first, otherwise `xcode-select --install`, etc.
   - XCode app is not in my applications folder and i'm not sure why not.
   - is there a VSCode generator option?
+  - remember: (llvm-project repo notes)
+    - the CMake official docs dont have an example for macOS
+    - the llvm docs example seems to need Xcode
+    - research how Cmake works with macOS
+    - clang config too
+    - do i need to fresh install the cloned llvm repo?
+    - could work: correct bash flags?
+    - **i was able to build and run hello.c with clang/llvm (without cmake) so some things were right there**
+    - llvm-project repo notes have more detailed source/root dir structure notes
+    - specific notes from the llvm and cmake docs in that note file
+    - llvm path and install notes in the note file
+    - target and path info in the note file
+    - i can still search for OSS llvm cmake config examples on gh
+    - will i have to match all libs and headers from the project source to the root llvm dirs?
+    - it could be a c++ version error or other versioning error (llvm version == clang version though)
+    - worst case: try installing XCode
+    - review high-level llvm infra so i include all the proper tools and libs for the build
 - config choices:
   - cmake GUI app or just cmake/make
     - both need cmake/ccpp-properties configs
+    - does GUI have an environment editor for $PATH, etc.?
     - CMake config with git clone llvm as target?
     - CMake config with native llvm as target? change $PATH
     - "The c_cpp_properties.json file is typically used for configuring C/C++ IntelliSense settings in Visual Studio Code."
