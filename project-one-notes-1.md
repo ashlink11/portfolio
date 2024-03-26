@@ -157,10 +157,7 @@ tring to keep in mind all the factors as i'm trying. common errors:
 # next steps: (sat mar 22)
 - use CMake macOS GUI
   - i have version 3.29.0-rc3
-  - note: this c++ code includes QtWidgets package
   - directions:
-
-
 
 ---
 
@@ -244,7 +241,6 @@ llvm should have been installed this way:
 brew install llvm
 ```
 
-
 in summary:
 
 > Building and Running:
@@ -260,12 +256,31 @@ in summary:
 > Use the CMake macOS UI application to build the project.
 > After successful build, execute the generated executable file to run the LLVM program.
 
-notes:
-- XCode or Unix Makefiles?
-- XCode app is not in my applications folder and i'm not sure why not.
+done:
+- uninstall CMake tools plugin (done)
+- uninstall CMake plugin (done)
+- uninstall c/c++ extensions plugin (done)
+- HUGE WIN: ^those uninstalls got rid of the header error in the main.cpp file (done)
+- modify directory structure, add new config file, delete CMake cache, etc. (done)
 
-notes for next steps:
-- try Unix Makefiles generator first, otherwise `xcode-select --install`, etc.
+next steps: (tues mar 26)
+- since i fixed the cpp file error with the uninstalls, try basic cmake/make commands again first
+- do generator research before config.
+- generator research:
+  - XCode or Unix Makefiles?:
+  - try Unix Makefiles generator first, otherwise `xcode-select --install`, etc.
+  - XCode app is not in my applications folder and i'm not sure why not.
+  - is there a VSCode generator option?
+- config choices:
+  - cmake GUI app or just cmake/make
+    - both need cmake/ccpp-properties configs
+    - CMake config with git clone llvm as target?
+    - CMake config with native llvm as target? change $PATH
+    - "The c_cpp_properties.json file is typically used for configuring C/C++ IntelliSense settings in Visual Studio Code."
+    - figure out the llvm path
+    - other properties json sub-configs
+    - .vscode settings cmake config settings file
+
 
 
 
