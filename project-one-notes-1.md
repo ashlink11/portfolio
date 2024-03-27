@@ -299,7 +299,112 @@ next steps: (tues mar 26)
     - other properties json sub-configs
     - .vscode settings cmake config settings file
 
+# progress (wed mar 27)
+- using the macOS CMake GUI app
+- created a new build folder (done)
+- "Generate" defaults to Unix Makefiles and gives the choices of:
+  - "use default native compilers"
+  - "specify native compilers"
+  - "specify toolchain file for cross-compiling"
+  - "specify options for cross-compiling"
 
+- clicked Generate > with default native compilers:
+
+Error: "Error in configuration process, project files may be invalid"
+
+```bash
+CMake Warning (dev) in CMakeLists.txt:
+  No project() command is present.  The top-level CMakeLists.txt file must
+  contain a literal, direct call to the project() command.  Add a line of
+  code such as
+
+    project(ProjectName)
+
+  near the top of the file, but after cmake_minimum_required().
+
+  CMake is pretending there is a "project(Project)" command on the first
+  line.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  cmake_minimum_required() should be called prior to this top-level project()
+  call.  Please see the cmake-commands(7) manual for usage documentation of
+  both commands.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+The C compiler identification is AppleClang 15.0.0.15000309
+The CXX compiler identification is AppleClang 15.0.0.15000309
+Detecting C compiler ABI info
+Detecting C compiler ABI info - done
+Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+Detecting C compile features
+Detecting C compile features - done
+Detecting CXX compiler ABI info
+Detecting CXX compiler ABI info - done
+Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+Detecting CXX compile features
+Detecting CXX compile features - done
+CMake Error at CMakeLists.txt:1 (find_package):
+  Could not find a package configuration file provided by "LLVM" with any of
+  the following names:
+
+    LLVMConfig.cmake
+    llvm-config.cmake
+
+  Add the installation prefix of "LLVM" to CMAKE_PREFIX_PATH or set
+  "LLVM_DIR" to a directory containing one of the above files.  If "LLVM"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
+CMake Warning (dev) in CMakeLists.txt:
+  No cmake_minimum_required command is present.  A line of code such as
+
+    cmake_minimum_required(VERSION 3.29)
+
+  should be added at the top of the file.  The version specified may be lower
+  if you wish to support older CMake versions for this project.  For more
+  information run "cmake --help-policy CMP0000".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+Configuring incomplete, errors occurred!
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
