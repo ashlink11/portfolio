@@ -370,30 +370,101 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 Configuring incomplete, errors occurred!
 ```
 
+also gave these values:
+
+```
+CMAKE_BACKWARDS_COMPATIBILITY  2.4
+CMAKE_BUILD_TYPE
+CMAKE_INSTALL_PREFIX           /usr/local
+CMAKE_OSX_ARCHITECTURES
+CMAKE_OSX_DEPLOYMENT_TARGET
+CMAKE_OSX_SYSROOT              /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
+EXECUTABLE_OUTPUT_PATH
+LLVM_DIR                       LLVM_DIR-NOTFOUND
+```
+
+- ^those might be all the additional elements the CMakeLists.txt wants with this GUI Generator config
+- studying it. (below)
+  
+- the CMakeLists.txt currently has:
+
+```
+find_package(LLVM REQUIRED CONFIG)
+
+include_directories(${LLVM_INCLUDE_DIRS})
+add_definitions(${LLVM_DEFINITIONS})
+
+llvm_map_components_to_libnames(llvm_libs core irreader)
+
+add_executable(MyLLVMProgram main.cpp)
+target_link_libraries(MyLLVMProgram ${llvm_libs})
+```
+
+- make sure i need all of those ^ so try removing each and checking the GUI (todo)
+
+### GUI says i need:
+
+- `project(ProjectName)`
+- `cmake_minimum_required()`
+> Please see the cmake-commands(7) manual for usage documentation of both commands.
+
+- `(find_package)`
+- `CMAKE_PREFIX_PATH`
+> CMake Error at CMakeLists.txt:1 (find_package)
+> CMake Error at CMakeLists.txt:1 (find_package):
+  > Could not find a package configuration file provided by "LLVM" with any of
+  > the following names:
+    > LLVMConfig.cmake
+    > llvm-config.cmake
+  > Add the installation prefix of "LLVM" to CMAKE_PREFIX_PATH or set
+  > "LLVM_DIR" to a directory containing one of the above files.  If "LLVM"
+  > provides a separate development package or SDK, be sure it has been
+  > installed.
 
 
+- also, $PATH, etc., in file sys:
+  - `LLVMConfig.cmake`
+  - `llvm-config.cmake`
 
+- `cmake_minimum_required(VERSION 3.29)`
+  > should be added at the top of the file.  The version specified may be lower
+  > if you wish to support older CMake versions for this project.  For more
+  > information run "cmake --help-policy CMP0000".
 
+^summary:
 
+i have 6:
+- `find_package(LLVM REQUIRED CONFIG)`
+- `include_directories(${LLVM_INCLUDE_DIRS})`
+- `add_definitions(${LLVM_DEFINITIONS})`
+- `llvm_map_components_to_libnames(llvm_libs core irreader)`
+- `add_executable(MyLLVMProgram main.cpp)`
+- `target_link_libraries(MyLLVMProgram ${llvm_libs})`
 
+GUI terminal error output says I need 4 more:
+- `(find_package)`
+- `LLVM_DIR` and/or `CMAKE_PREFIX_PATH`
+  - (installation prefix of "LLVM")
+  - (also, $PATH, etc., in file sys):
+    - (LLVMConfig.cmake))
+    - (llvm-config.cmake)
+- `cmake_minimum_required(VERSION 3.29)`
 
+GUI config screen says I need these 8 sub-configs: (1 repeat)
+```
+CMAKE_BACKWARDS_COMPATIBILITY  2.4
+CMAKE_BUILD_TYPE
+CMAKE_INSTALL_PREFIX           /usr/local
+CMAKE_OSX_ARCHITECTURES
+CMAKE_OSX_DEPLOYMENT_TARGET
+CMAKE_OSX_SYSROOT              /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
+EXECUTABLE_OUTPUT_PATH
+LLVM_DIR                       LLVM_DIR-NOTFOUND
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- in total i might need 17 elements in the CMakeLists.txt
+- ^this is a huge win because i was having super major trouble knowing that
+- 
 
 
 
