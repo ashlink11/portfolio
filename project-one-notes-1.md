@@ -464,7 +464,16 @@ LLVM_DIR                       LLVM_DIR-NOTFOUND
 
 - in total i might need 17 elements in the CMakeLists.txt
 - ^this is a huge win because i was having super major trouble knowing that
-- 
+- remember: `"Error in configuration process, project files may be invalid"`
+
+- next steps:
+  - go through each sub-config line-by-line
+    - consider if the problem is actually in the c++ project source code though
+    - GUI can auto-update the 8 sub-configs on the GUI config screen (but not the rest?)
+  - ^if that doesn't work, try a different "Generate" option
+    - "specify native compilers"
+    - "specify toolchain file for cross-compiling"
+    - "specify options for cross-compiling"
 
 
 
