@@ -475,14 +475,112 @@ LLVM_DIR                       LLVM_DIR-NOTFOUND
     - "specify toolchain file for cross-compiling"
     - "specify options for cross-compiling"
 
+### progress (thurs mar 28, 2024)
+
+- new attempt for CMakeLists.txt:
+  - need to find the llvm path first though (see under the config) 
+
+```
+cmake_minimum_required(VERSION 3.29)
+
+project(MyLLVMProgram)
+
+# Set the LLVM_DIR and CMAKE_PREFIX_PATH to locate LLVM
+set(LLVM_DIR /path/to/llvm/installation/lib/cmake/llvm)
+set(CMAKE_PREFIX_PATH /path/to/llvm/installation)
+
+# Find LLVM package
+find_package(LLVM REQUIRED CONFIG)
+
+# Include LLVM headers
+include_directories(${LLVM_INCLUDE_DIRS})
+
+# Add LLVM definitions
+add_definitions(${LLVM_DEFINITIONS})
+
+# Map LLVM components to libraries
+llvm_map_components_to_libnames(llvm_libs core irreader)
+
+# Set build type (you can adjust this as needed)
+set(CMAKE_BUILD_TYPE Debug)
+
+# Set installation prefix
+set(CMAKE_INSTALL_PREFIX /usr/local)
+
+# Set target architecture and deployment target
+set(CMAKE_OSX_ARCHITECTURES x86_64)
+set(CMAKE_OSX_DEPLOYMENT_TARGET 14.4)
+
+# Set the macOS system root
+set(CMAKE_OSX_SYSROOT /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk)
+
+# Set executable output path
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+
+# Add your executable target
+add_executable(MyLLVMProgram main.cpp)
+
+# Link LLVM libraries to your executable
+target_link_libraries(MyLLVMProgram ${llvm_libs})
+```
+
+- finding the llvm install
+
+```bash
+find / -name llvm-config.cmake
+# ^did not work and started searching Photos and Contacts oddly
+# lots of searching /System/Volumes but "not permitted"
+
+echo $LLVM_DIR
+# ^no result
+```
+
+- couldnt find it but used the GUI native install option
+- result:
+
+```bash
+The C compiler identification is AppleClang 15.0.0.15000309
+The CXX compiler identification is AppleClang 15.0.0.15000309
+Detecting C compiler ABI info
+Detecting C compiler ABI info - done
+Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+Detecting C compile features
+Detecting C compile features - done
+Detecting CXX compiler ABI info
+Detecting CXX compiler ABI info - done
+Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+Detecting CXX compile features
+Detecting CXX compile features - done
+CMake Error at CMakeLists.txt:10 (find_package):
+  Could not find a package configuration file provided by "LLVM" with any of
+  the following names:
+
+    LLVMConfig.cmake
+    llvm-config.cmake
+
+  Add the installation prefix of "LLVM" to CMAKE_PREFIX_PATH or set
+  "LLVM_DIR" to a directory containing one of the above files.  If "LLVM"
+  provides a separate development package or SDK, be sure it has been
+  installed.
 
 
+Configuring incomplete, errors occurred!
+```
 
+- ^so it seems the only issue is finding the llvm install dir with its own cmake config. interesting. i didnt know it had a cmake config. that could help a lot.
+- also only got 6 errors in the GUI screen from that attempt^:
 
+```
+CMAKE_BUILD_TYPE
+CMAKE_INSTALL_PREFIX           /usr/local
+CMAKE_OSX_ARCHITECTURES
+CMAKE_OSX_DEPLOYMENT_TARGET
+CMAKE_OSX_SYSROOT              /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
+LLVM_DIR                       LLVM_DIR-NOTFOUND
+```
 
-
-
-
+- next steps:
+  - go for a second GUI attempt by focusing on the llvm-config.cmake first, then the other GUI screen errors 
 
  
 
