@@ -294,6 +294,12 @@ next:
 - make the config
 - examine the IR with the tooling
 - get it on the frontend asap
+- 3/28 note: i've been noticing SDK needs in project 1 notes file and also CUDA SDKs too:
+  - [NVIDIA SDK glossary](https://developer.nvidia.com/sdk-glossary?ncid=em-even-320346-vt53&AY0sih1l1UctMMIQTiqyC6aG0vIU7hk9NTqbq_hdl8IdJheje-8uln1-X4z-2ibgdTCXrtCR6nme4nSZM2oaFQ&mkt_tok=MTU2LU9GTi03NDIAAAGSH2kFQN7hB2EUkz0R4yCQOaSKpCpT72cvdEC-pNi79okOwy6M5E_BiaeCznSZvrfNlYg6rNnfmrKodZKUzjQS70M5767F97VL3kGAx5nvuqSq4WGu63g)
+  - additional NVIDIA resource: [Deep Learning Institute](https://www.nvidia.com/en-us/training/?ncid=em-even-886387-vt53&AY0sih1l1UctMMIQTiqyC6aG0vIU7hk9NTqbq_hdl8IdJheje-8uln1-X4z-2ibgdTCXrtCR6nme4nSZM2oaFQ&mkt_tok=MTU2LU9GTi03NDIAAAGSH2kFQCObZqwKtC-J_STITgfFWZDSCosu8VYBbsKCN8FD3qjzelrdm_VJtF9egQhWN6J-rkJvV8cXrMGaUjtCY9T7ytL86J6CS1YzTAK761Eu1Jt2coo])
+  - `CMAKE_OSX_SYSROOT              /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk`
+  -  If "LLVM" provides a separate development package or SDK, be sure it has been installed.
+  -  Set the macOS system root `set(CMAKE_OSX_SYSROOT /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk)`
 
 
 
