@@ -133,8 +133,6 @@ Here are some of the key features of the Hugging Face Transformers library:
   - ^this has been super difficult. but at least i've studied it a tonnnnn
 
 
-# DEADLINE: (pushing this back a week) next FRIDAY March 29 I have to compile the simplest c++ program possible with LLVM
-
 # next steps: (wed mar 20)
 
 - i learned yesterday that CUDA uses CMake to compile so this will be worth it
@@ -673,7 +671,7 @@ set(CMAKE_OSX_SYSROOT /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
 # Add your executable target
-add_executable(ModuleMakerTest src/ModuleMakerTest.cpp)
+add_executable(ModuleMakerTest)
 
 # Link LLVM libraries to your executable
 target_link_libraries(ModuleMakerTest ${llvm_libs})
@@ -761,7 +759,7 @@ cmake version 3.29.0
 ```
 
 
-- then bash compiled. result:
+- then bash configured and generated. result:
   
 ```bash
 -- The C compiler identification is AppleClang 15.0.0.15000309
@@ -793,4 +791,170 @@ cmake version 3.29.0
 -- Build files have been written to: /Users/ash/dev/ModuleMakerTest
 ```
 
+```bash
+make
 
+[ 50%] Building CXX object CMakeFiles/ModuleMakerTest.dir/src/ModuleMakerTest.cpp.o
+In file included from /Users/ash/dev/ModuleMakerTest/src/ModuleMakerTest.cpp:15:
+In file included from /usr/local/opt/llvm/include/llvm/Bitcode/BitcodeWriter.h:16:
+In file included from /usr/local/opt/llvm/include/llvm/ADT/StringRef.h:12:
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:68:10: error: unknown type name 'constexpr'
+  static constexpr uintptr_t Log2MaxAlign = 12;
+         ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:68:29: error: expected ';' at end of declaration list
+  static constexpr uintptr_t Log2MaxAlign = 12;
+                            ^
+                            ;
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:71:14: error: expected ';' after expression
+    uintptr_t Val = static_cast<uintptr_t>(-1);
+             ^
+             ;
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:71:15: error: use of undeclared identifier 'Val'
+    uintptr_t Val = static_cast<uintptr_t>(-1);
+              ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:71:33: error: unknown type name 'uintptr_t'; did you mean 'intptr_t'?
+    uintptr_t Val = static_cast<uintptr_t>(-1);
+                                ^~~~~~~~~
+                                intptr_t
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_intptr_t.h:32:33: note: 'intptr_t' declared here
+typedef __darwin_intptr_t       intptr_t;
+                                ^
+In file included from /Users/ash/dev/ModuleMakerTest/src/ModuleMakerTest.cpp:15:
+In file included from /usr/local/opt/llvm/include/llvm/Bitcode/BitcodeWriter.h:16:
+In file included from /usr/local/opt/llvm/include/llvm/ADT/StringRef.h:12:
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:72:5: error: use of undeclared identifier 'Val'
+    Val <<= Log2MaxAlign;
+    ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:72:13: error: use of undeclared identifier 'Log2MaxAlign'
+    Val <<= Log2MaxAlign;
+            ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:73:33: error: use of undeclared identifier 'Val'
+    return reinterpret_cast<T*>(Val);
+                                ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:77:14: error: expected ';' after expression
+    uintptr_t Val = static_cast<uintptr_t>(-2);
+             ^
+             ;
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:77:15: error: use of undeclared identifier 'Val'
+    uintptr_t Val = static_cast<uintptr_t>(-2);
+              ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:77:33: error: unknown type name 'uintptr_t'; did you mean 'intptr_t'?
+    uintptr_t Val = static_cast<uintptr_t>(-2);
+                                ^~~~~~~~~
+                                intptr_t
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_intptr_t.h:32:33: note: 'intptr_t' declared here
+typedef __darwin_intptr_t       intptr_t;
+                                ^
+In file included from /Users/ash/dev/ModuleMakerTest/src/ModuleMakerTest.cpp:15:
+In file included from /usr/local/opt/llvm/include/llvm/Bitcode/BitcodeWriter.h:16:
+In file included from /usr/local/opt/llvm/include/llvm/ADT/StringRef.h:12:
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:78:5: error: use of undeclared identifier 'Val'
+    Val <<= Log2MaxAlign;
+    ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:78:13: error: use of undeclared identifier 'Log2MaxAlign'
+    Val <<= Log2MaxAlign;
+            ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:79:33: error: use of undeclared identifier 'Val'
+    return reinterpret_cast<T*>(Val);
+                                ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:83:33: error: expected ')'
+    return (unsigned((uintptr_t)PtrVal) >> 4) ^
+                                ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:83:21: note: to match this '('
+    return (unsigned((uintptr_t)PtrVal) >> 4) ^
+                    ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:84:33: error: expected ')'
+           (unsigned((uintptr_t)PtrVal) >> 9);
+                                ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:84:21: note: to match this '('
+           (unsigned((uintptr_t)PtrVal) >> 9);
+                    ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:216:35: error: a space is required between consecutive right angle brackets (use '> >')
+struct DenseMapInfo<std::pair<T, U>> {
+                                  ^~
+                                  > >
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:217:16: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+  using Pair = std::pair<T, U>;
+               ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:218:21: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+  using FirstInfo = DenseMapInfo<T>;
+                    ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:219:22: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+  using SecondInfo = DenseMapInfo<U>;
+                     ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:251:19: warning: variadic templates are a C++11 extension [-Wc++11-extensions]
+template <typename... Ts> struct DenseMapInfo<std::tuple<Ts...>> {
+                  ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:251:52: error: no member named 'tuple' in namespace 'std'
+template <typename... Ts> struct DenseMapInfo<std::tuple<Ts...>> {
+                                              ~~~~~^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:251:58: error: 'Ts' does not refer to a value
+template <typename... Ts> struct DenseMapInfo<std::tuple<Ts...>> {
+                                                         ^
+/usr/local/opt/llvm/include/llvm/ADT/DenseMapInfo.h:251:23: note: declared here
+template <typename... Ts> struct DenseMapInfo<std::tuple<Ts...>> {
+                      ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+4 warnings and 20 errors generated.
+make[2]: *** [CMakeFiles/ModuleMakerTest.dir/src/ModuleMakerTest.cpp.o] Error 1
+make[1]: *** [CMakeFiles/ModuleMakerTest.dir/all] Error 2
+make: *** [all] Error 2
+
+```
+
+- ^oh. didn't  i'm getting unknown types and syntax errors in the llvm install files.
+- background info on the build-run process:
+
+```md
+After running cmake ., which generates the necessary build files (such as Makefiles), running make initiates the compilation process based on those generated build files.
+
+Here's what happens in detail:
+
+Dependency Check: make checks the dependencies of your project. It looks at the source files and header files to determine what needs to be compiled.
+
+Compilation: It then compiles the necessary source files into object files (.o files).
+
+Linking: Once all necessary source files have been compiled into object files, make links them together along with any required libraries to generate the final executable or library file.
+
+Output: Finally, make produces the final executable or library specified in the CMakeLists.txt file or the default target if none is specified.
+
+make is a tool that automates the building process based on instructions provided in the Makefile or CMakeLists.txt, which are generated by CMake based on your project configuration.
+```
+
+- ^so i'm not to compile source to object files (`.o`).
+- i probably didn't generate the right build files, meaning bad CMakeLists.txt
+- adding `set(CMAKE_CXX_STANDARD 14)` didn't work.
+- ***might need compiler flags
+- might have to check `include` paths to correct headers (dont think so though)
+- try GUI again and figure out how to run it.
+
+results:
+- so i was able to 'build' with both the GUI and bash, but in either case there was no file in the `build_dir/bin`
+- `ls -la` didnt help.
+
+
+next steps:
+- figure out why `bin` is empty and why the build seemed successful but didn't build the executable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# DEADLINE: (pushing this back a week) next FRIDAY March 29 I have to compile the simplest c++ program possible with LLVM
