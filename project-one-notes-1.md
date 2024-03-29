@@ -582,7 +582,133 @@ LLVM_DIR                       LLVM_DIR-NOTFOUND
 - next steps:
   - go for a second GUI attempt by focusing on the llvm-config.cmake first, then the other GUI screen errors 
 
- 
+# progress fri mar 29, 2024
+
+- "CMake should locate the library automatically if it's installed in a standard location. If not, you might need to specify the path to the library using find_library or similar commands."
+- `locate` command finds files
+- `not symlinked into /usr/local`
+- brew info yielded: (see context below this list)
+  - `usr/local/Cellar/llvm/17.0.6_1` (7,207 files, 1.8GB)
+  - `/usr/local/opt/llvm/lib/c++`
+  - `/usr/local/opt/llvm/lib`
+  - `/usr/local/opt/llvm/include`
+
+```bash
+brew info llvm
+
+==> llvm: stable 17.0.6 (bottled), HEAD [keg-only]
+Next-gen compiler infrastructure
+https://llvm.org/
+/usr/local/Cellar/llvm/17.0.6_1 (7,207 files, 1.8GB)
+  Poured from bottle using the formulae.brew.sh API on 2024-02-02 at 17:29:55
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/l/llvm.rb
+License: Apache-2.0 with LLVM-exception
+==> Dependencies
+Build: cmake ✘, ninja ✘, swig ✘
+Required: python@3.12 ✘, z3 ✘, zstd ✔
+==> Options
+--HEAD
+	Install HEAD version
+==> Caveats
+To use the bundled libc++ please add the following LDFLAGS:
+  LDFLAGS="-L/usr/local/opt/llvm/lib/c++ -Wl,-rpath,/usr/local/opt/llvm/lib/c++"
+
+llvm is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+
+If you need to have llvm first in your PATH, run:
+  echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find llvm you may need to set:
+  export LDFLAGS="-L/usr/local/opt/llvm/lib"
+  export CPPFLAGS="-I/usr/local/opt/llvm/include"
+==> Analytics
+install: 44,707 (30 days), 145,108 (90 days), 470,071 (365 days)
+install-on-request: 19,652 (30 days), 63,470 (90 days), 309,979 (365 days)
+build-error: 498 (30 days)
+```
+
+- fixed the CMakeLists.txt and it configured and generated with this:
+
+```
+cmake_minimum_required(VERSION 3.29)
+
+project(ModuleMakerTest)
+
+# Set the LLVM_DIR and CMAKE_PREFIX_PATH to locate LLVM
+set(LLVM_DIR /usr/local/opt/llvm/)
+set(CMAKE_PREFIX_PATH /usr/local/opt/llvm/)
+# set(LLVM_DIR /path/to/llvm/installation/lib/cmake/llvm)
+# set(CMAKE_PREFIX_PATH /path/to/llvm/installation)
+
+# Find LLVM package
+find_package(LLVM REQUIRED CONFIG)
+
+# Include LLVM headers
+include_directories(${LLVM_INCLUDE_DIRS})
+
+# Add LLVM definitions
+add_definitions(${LLVM_DEFINITIONS})
+
+# Map LLVM components to libraries
+llvm_map_components_to_libnames(llvm_libs core irreader)
+
+# Set build type (you can adjust this as needed)
+set(CMAKE_BUILD_TYPE Debug)
+
+# Set installation prefix
+set(CMAKE_INSTALL_PREFIX /usr/local)
+
+# Set target architecture and deployment target
+set(CMAKE_OSX_ARCHITECTURES x86_64)
+set(CMAKE_OSX_DEPLOYMENT_TARGET 14.4)
+
+# Set the macOS system root
+set(CMAKE_OSX_SYSROOT /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk)
+
+# Set executable output path
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+
+# Add your executable target
+add_executable(ModuleMakerTest src/ModuleMakerTest.cpp)
+
+# Link LLVM libraries to your executable
+target_link_libraries(ModuleMakerTest ${llvm_libs})
+```
+
+- terminal result:
+  
+```bash
+The C compiler identification is AppleClang 15.0.0.15000309
+The CXX compiler identification is AppleClang 15.0.0.15000309
+Detecting C compiler ABI info
+Detecting C compiler ABI info - done
+Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+Detecting C compile features
+Detecting C compile features - done
+Detecting CXX compiler ABI info
+Detecting CXX compiler ABI info - done
+Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+Detecting CXX compile features
+Detecting CXX compile features - done
+Performing Test HAVE_FFI_CALL
+Performing Test HAVE_FFI_CALL - Success
+Found FFI: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libffi.tbd
+Looking for histedit.h
+Looking for histedit.h - found
+Found LibEdit: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include (found version "2.11")
+Performing Test Terminfo_LINKABLE
+Performing Test Terminfo_LINKABLE - Success
+Found Terminfo: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libcurses.tbd
+Found ZLIB: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libz.tbd (found version "1.2.12")
+Found zstd: /usr/local/lib/libzstd.dylib
+Found LibXml2: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libxml2.tbd (found version "2.9.13")
+Configuring done (1.9s)
+
+Configuring done (0.1s)
+Generating done (0.0s)
+```
 
 
 
