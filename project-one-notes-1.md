@@ -630,6 +630,8 @@ build-error: 498 (30 days)
 ```
 
 - fixed the CMakeLists.txt and it configured and generated with this:
+  - note: i hadn't updated cmake yet to the latest version
+  - GUI output is below the config file
 
 ```
 cmake_minimum_required(VERSION 3.29)
@@ -677,8 +679,8 @@ add_executable(ModuleMakerTest src/ModuleMakerTest.cpp)
 target_link_libraries(ModuleMakerTest ${llvm_libs})
 ```
 
-- terminal result:
-  
+- GUI result:
+
 ```bash
 The C compiler identification is AppleClang 15.0.0.15000309
 The CXX compiler identification is AppleClang 15.0.0.15000309
@@ -704,11 +706,91 @@ Found Terminfo: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/
 Found ZLIB: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libz.tbd (found version "1.2.12")
 Found zstd: /usr/local/lib/libzstd.dylib
 Found LibXml2: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libxml2.tbd (found version "2.9.13")
-Configuring done (1.9s)
+Configuring done (2.0s)
 
 Configuring done (0.1s)
 Generating done (0.0s)
 ```
 
+- ^in GUI can see it changed `LLVM_DIR` to `/usr/local/opt/llvm/lib/cmake/llvm`
+- wouldnt compile with `cmake .` due to old cmake version.
+- updated cmake:
+
+```bash
+cmake --version
+
+cmake version 3.23.3
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+
+
+brew upgrade cmake
+
+Warning: Treating cmake as a formula. For the cask, use homebrew/cask/cmake or specify the `--cask` flag.
+...
+==> Upgrading cmake
+  3.23.3 -> 3.29.0
+==> Pouring cmake--3.29.0.sonoma.bottle.tar.gz
+==> Caveats
+To install the CMake documentation, run:
+  brew install cmake-docs
+...
+==> Summary
+_  /usr/local/Cellar/cmake/3.29.0: 3,383 files, 59.3MB
+# remove a bunch of Homebrew caches:
+Removing: /Users/ash/Library/Caches/Homebrew/c-ares--1.26.0... (309KB)
+Removing: /Users/ash/Library/Caches/Homebrew/ca-certificates--2023-12-12... (127.7KB)
+Removing: /Users/ash/Library/Caches/Homebrew/icu4c--73.2... (29MB)
+Removing: /Users/ash/Library/Caches/Homebrew/libnghttp2--1.59.0... (220.1KB)
+Removing: /Users/ash/Library/Caches/Homebrew/libuv--1.47.0... (346.5KB)
+Removing: /Users/ash/Library/Caches/Homebrew/nghttp2--1.59.0... (816.1KB)
+Removing: /Users/ash/Library/Caches/Homebrew/node--21.6.1... (15.8MB)
+Removing: /Users/ash/Library/Caches/Homebrew/python@3.12--3.12.1_1... (15.8MB)
+Removing: /Users/ash/Library/Caches/Homebrew/readline--8.2.7... (549.7KB)
+Removing: /Users/ash/Library/Caches/Homebrew/sqlite--3.45.1... (2.3MB)
+Removing: /Users/ash/Library/Caches/Homebrew/xz--5.4.5... (674.7KB)
+Removing: /Users/ash/Library/Caches/Homebrew/z3--4.12.5... (13.0MB)
+Removing: /Users/ash/Library/Caches/Homebrew/zstd--1.5.5... (846.3KB)
+Removing: /Users/ash/Library/Logs/Homebrew/python@3.12... (2 files, 2KB)
+Removing: /Users/ash/Library/Logs/Homebrew/openssl@3... (64B)
+Removing: /Users/ash/Library/Logs/Homebrew/ca-certificates... (64B)
+Removing: /Users/ash/Library/Logs/Homebrew/node... (64B)
+
+cmake --version
+
+cmake version 3.29.0
+```
+
+
+- then bash compiled. result:
+  
+```bash
+-- The C compiler identification is AppleClang 15.0.0.15000309
+-- The CXX compiler identification is AppleClang 15.0.0.15000309
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test HAVE_FFI_CALL
+-- Performing Test HAVE_FFI_CALL - Success
+-- Found FFI: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libffi.tbd
+-- Looking for histedit.h
+-- Looking for histedit.h - found
+-- Found LibEdit: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include (found version "2.11")
+-- Performing Test Terminfo_LINKABLE
+-- Performing Test Terminfo_LINKABLE - Success
+-- Found Terminfo: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libcurses.tbd
+-- Found ZLIB: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libz.tbd (found version "1.2.12")
+-- Found zstd: /usr/local/lib/libzstd.dylib
+-- Found LibXml2: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libxml2.tbd (found version "2.9.13")
+-- Configuring done (2.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/ash/dev/ModuleMakerTest
+```
 
 
