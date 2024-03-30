@@ -936,6 +936,41 @@ results:
 next steps:
 - figure out why `bin` is empty and why the build seemed successful but didn't build the executable.
 
+### progress sat march 30, 2024
+
+- `bin` actually was probably empty because it takes `cmake .` and `make`/`make install` to actually install the binaries
+- and `make` has errors i listed above.
+- further research:
+
+```
+The errors you're encountering indicate that there are issues with the compilation of your source files due to problems with constexpr, uintptr_t, and other types. These errors suggest that the compiler is having trouble understanding or recognizing certain C++11 features or standard library types.
+
+Here are a few steps you can take to resolve these errors:
+
+Compiler Compatibility: Ensure that you're using a compiler that supports the C++11 standard or later. Some older compilers may not fully support features introduced in C++11, such as constexpr.
+
+Include Paths: Verify that your project's include paths are correctly set up. It seems like your project is including headers from LLVM, so make sure the paths to LLVM headers are included properly in your CMakeLists.txt file.
+
+CMake Configuration: Check your CMake configuration to ensure that the correct compiler flags and standards are being used. You might need to explicitly specify the C++ standard version (e.g., C++11, C++14, C++17) in your CMakeLists.txt file.
+
+LLVM Installation: Make sure that LLVM is properly installed on your system and that the version you're using is compatible with your project's requirements.
+
+Update LLVM: If you're using an older version of LLVM, consider updating to a newer version that may have better compatibility with modern C++ standards.
+
+Compiler Options: If you're still encountering issues, you may need to adjust your compiler options or flags to ensure compatibility with the C++11 standard and LLVM headers.
+
+Check Dependencies: Verify that all dependencies required by your project, including LLVM and any other libraries, are installed correctly and are compatible with each other.
+
+By addressing these potential issues, you should be able to resolve the compilation errors and successfully build your LLVM project. If you're still having trouble, consider seeking assistance from the LLVM community or forums specific to your development environment.
+```
+
+- alright, that's extremely helpful^ knowing it's likely a c++ versioning error and not a llvm/clang version error.
+- plus thats good because i havent studied c++ versioning yet.
+- latest version of c++ is c++ 20. from 2020.
+- my project is likely using c++ 11.
+
+next steps: (only a small progress day, but it's fine)
+- upgrade my program to c++
 
 
 
@@ -944,17 +979,4 @@ next steps:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# DEADLINE: (pushing this back a week) next FRIDAY March 29 I have to compile the simplest c++ program possible with LLVM
+# DEADLINE: (updated) next FRIDAY Apr 5 I have to compile the simplest c++ program possible with LLVM
