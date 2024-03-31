@@ -972,11 +972,827 @@ By addressing these potential issues, you should be able to resolve the compilat
 next steps: (only a small progress day, but it's fine)
 - upgrade my program to c++
 
+# progress mar 31, 2024
+
+- i updated the config by adding these two lines:
+
+```
+set(CMAKE_CXX_STANDARD 20)
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
+endif()
+```
+
+- that gave me this terminal output when i ran `cmake .` `make`: (which is a new error but lots were debugged)
+
+```bash
+[ 50%] Building CXX object CMakeFiles/ModuleMakerTest.dir/src/ModuleMakerTest.cpp.o
+[100%] Linking CXX executable bin/ModuleMakerTest
+Undefined symbols for architecture x86_64:
+  "llvm::WriteBitcodeToFile(llvm::Module const&, llvm::raw_ostream&, bool, llvm::ModuleSummaryIndex const*, bool, std::__1::array<unsigned int, 5ul>*)", referenced from:
+      _main in ModuleMakerTest.cpp.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[2]: *** [bin/ModuleMakerTest] Error 1
+make[1]: *** [CMakeFiles/ModuleMakerTest.dir/all] Error 2
+make: *** [all] Error 2
+```
+
+- in the GUI i was able to configure and generate with this output:
+
+```
+The C compiler identification is AppleClang 15.0.0.15000309
+The CXX compiler identification is AppleClang 15.0.0.15000309
+Detecting C compiler ABI info
+Detecting C compiler ABI info - done
+Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+Detecting C compile features
+Detecting C compile features - done
+Detecting CXX compiler ABI info
+Detecting CXX compiler ABI info - done
+Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+Detecting CXX compile features
+Detecting CXX compile features - done
+Performing Test HAVE_FFI_CALL
+Performing Test HAVE_FFI_CALL - Success
+Found FFI: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libffi.tbd
+Looking for histedit.h
+Looking for histedit.h - found
+Found LibEdit: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include (found version "2.11")
+Performing Test Terminfo_LINKABLE
+Performing Test Terminfo_LINKABLE - Success
+Found Terminfo: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libcurses.tbd
+Found ZLIB: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libz.tbd (found version "1.2.12")
+Found zstd: /usr/local/lib/libzstd.dylib
+Found LibXml2: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libxml2.tbd (found version "2.9.13")
+Configuring done (2.4s)
+Generating done (0.0s)
+```
+
+- btw, i had these config lines highlighted after configuring:
+
+```
+CMAKE_BUILD_TYPE
+CMAKE_INSTALL_PREFIX           /usr/local
+CMAKE_OSX_ARCHITECTURES
+CMAKE_OSX_DEPLOYMENT_TARGET
+CMAKE_OSX_SYSROOT              /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
+LLVM_DIR                       /user/local/opt/llvm/lib/cmake/llvm
+```
+
+- ^but again, neither built anything in their `bin`s
+- these might fix it:
+
+> Update CMake Configuration:
+> Make sure that the LLVM libraries are correctly linked in your CMake configuration. Ensure that llvm_libs contains all the necessary LLVM libraries, including the one containing WriteBitcodeToFile. You can manually check which library provides WriteBitcodeToFile and add it to your target_link_libraries command in your CMakeLists.txt.
+
+> Inspect Dependencies:
+> If necessary, use tools like ldd on Linux or otool -L on macOS to inspect the dependencies of your executable and verify that they include the required LLVM libraries.
+
+- these are the libs in /usr/local/opt/llvm/lib:
+
+```
+LLVMPolly.so
+c++
+clang
+cmake
+libClangdXPCLib.dylib
+libLLVM-17.dylib
+libLLVM-C.dylib
+libLLVM.dylib
+libLLVMAArch64AsmParser.a
+libLLVMAArch64CodeGen.a
+libLLVMAArch64Desc.a
+libLLVMAArch64Disassembler.a
+libLLVMAArch64Info.a
+libLLVMAArch64Utils.a
+libLLVMAMDGPUAsmParser.a
+libLLVMAMDGPUCodeGen.a
+libLLVMAMDGPUDesc.a
+libLLVMAMDGPUDisassembler.a
+libLLVMAMDGPUInfo.a
+libLLVMAMDGPUTargetMCA.a
+libLLVMAMDGPUUtils.a
+libLLVMARMAsmParser.a
+libLLVMARMCodeGen.a
+libLLVMARMDesc.a
+libLLVMARMDisassembler.a
+libLLVMARMInfo.a
+libLLVMARMUtils.a
+libLLVMAVRAsmParser.a
+libLLVMAVRCodeGen.a
+libLLVMAVRDesc.a
+libLLVMAVRDisassembler.a
+libLLVMAVRInfo.a
+libLLVMAggressiveInstCombine.a
+libLLVMAnalysis.a
+libLLVMAsmParser.a
+libLLVMAsmPrinter.a
+libLLVMBPFAsmParser.a
+libLLVMBPFCodeGen.a
+libLLVMBPFDesc.a
+libLLVMBPFDisassembler.a
+libLLVMBPFInfo.a
+libLLVMBinaryFormat.a
+libLLVMBitReader.a
+libLLVMBitWriter.a
+libLLVMBitstreamReader.a
+libLLVMCFGuard.a
+libLLVMCFIVerify.a
+libLLVMCodeGen.a
+libLLVMCodeGenTypes.a
+libLLVMCore.a
+libLLVMCoroutines.a
+libLLVMCoverage.a
+libLLVMDWARFLinker.a
+libLLVMDWARFLinkerParallel.a
+libLLVMDWP.a
+libLLVMDebugInfoBTF.a
+libLLVMDebugInfoCodeView.a
+libLLVMDebugInfoDWARF.a
+libLLVMDebugInfoGSYM.a
+libLLVMDebugInfoLogicalView.a
+libLLVMDebugInfoMSF.a
+libLLVMDebugInfoPDB.a
+libLLVMDebuginfod.a
+libLLVMDemangle.a
+libLLVMDiff.a
+libLLVMDlltoolDriver.a
+libLLVMExecutionEngine.a
+libLLVMExegesis.a
+libLLVMExegesisAArch64.a
+libLLVMExegesisMips.a
+libLLVMExegesisPowerPC.a
+libLLVMExegesisX86.a
+libLLVMExtensions.a
+libLLVMFileCheck.a
+libLLVMFrontendHLSL.a
+libLLVMFrontendOpenACC.a
+libLLVMFrontendOpenMP.a
+libLLVMFuzzMutate.a
+libLLVMFuzzerCLI.a
+libLLVMGlobalISel.a
+libLLVMHexagonAsmParser.a
+libLLVMHexagonCodeGen.a
+libLLVMHexagonDesc.a
+libLLVMHexagonDisassembler.a
+libLLVMHexagonInfo.a
+libLLVMIRPrinter.a
+libLLVMIRReader.a
+libLLVMInstCombine.a
+libLLVMInstrumentation.a
+libLLVMInterfaceStub.a
+libLLVMInterpreter.a
+libLLVMJITLink.a
+libLLVMLTO.a
+libLLVMLanaiAsmParser.a
+libLLVMLanaiCodeGen.a
+libLLVMLanaiDesc.a
+libLLVMLanaiDisassembler.a
+libLLVMLanaiInfo.a
+libLLVMLibDriver.a
+libLLVMLineEditor.a
+libLLVMLinker.a
+libLLVMLoongArchAsmParser.a
+libLLVMLoongArchCodeGen.a
+libLLVMLoongArchDesc.a
+libLLVMLoongArchDisassembler.a
+libLLVMLoongArchInfo.a
+libLLVMMC.a
+libLLVMMCA.a
+libLLVMMCDisassembler.a
+libLLVMMCJIT.a
+libLLVMMCParser.a
+libLLVMMIRParser.a
+libLLVMMSP430AsmParser.a
+libLLVMMSP430CodeGen.a
+libLLVMMSP430Desc.a
+libLLVMMSP430Disassembler.a
+libLLVMMSP430Info.a
+libLLVMMipsAsmParser.a
+libLLVMMipsCodeGen.a
+libLLVMMipsDesc.a
+libLLVMMipsDisassembler.a
+libLLVMMipsInfo.a
+libLLVMNVPTXCodeGen.a
+libLLVMNVPTXDesc.a
+libLLVMNVPTXInfo.a
+libLLVMObjCARCOpts.a
+libLLVMObjCopy.a
+libLLVMObject.a
+libLLVMObjectYAML.a
+libLLVMOption.a
+libLLVMOrcJIT.a
+libLLVMOrcShared.a
+libLLVMOrcTargetProcess.a
+libLLVMPasses.a
+libLLVMPowerPCAsmParser.a
+libLLVMPowerPCCodeGen.a
+libLLVMPowerPCDesc.a
+libLLVMPowerPCDisassembler.a
+libLLVMPowerPCInfo.a
+libLLVMProfileData.a
+libLLVMRISCVAsmParser.a
+libLLVMRISCVCodeGen.a
+libLLVMRISCVDesc.a
+libLLVMRISCVDisassembler.a
+libLLVMRISCVInfo.a
+libLLVMRISCVTargetMCA.a
+libLLVMRemarks.a
+libLLVMRuntimeDyld.a
+libLLVMScalarOpts.a
+libLLVMSelectionDAG.a
+libLLVMSparcAsmParser.a
+libLLVMSparcCodeGen.a
+libLLVMSparcDesc.a
+libLLVMSparcDisassembler.a
+libLLVMSparcInfo.a
+libLLVMSupport.a
+libLLVMSymbolize.a
+libLLVMSystemZAsmParser.a
+libLLVMSystemZCodeGen.a
+libLLVMSystemZDesc.a
+libLLVMSystemZDisassembler.a
+libLLVMSystemZInfo.a
+libLLVMTableGen.a
+libLLVMTableGenCommon.a
+libLLVMTableGenGlobalISel.a
+libLLVMTarget.a
+libLLVMTargetParser.a
+libLLVMTextAPI.a
+libLLVMTransformUtils.a
+libLLVMVEAsmParser.a
+libLLVMVECodeGen.a
+libLLVMVEDesc.a
+libLLVMVEDisassembler.a
+libLLVMVEInfo.a
+libLLVMVectorize.a
+libLLVMWebAssemblyAsmParser.a
+libLLVMWebAssemblyCodeGen.a
+libLLVMWebAssemblyDesc.a
+libLLVMWebAssemblyDisassembler.a
+libLLVMWebAssemblyInfo.a
+libLLVMWebAssemblyUtils.a
+libLLVMWindowsDriver.a
+libLLVMWindowsManifest.a
+libLLVMX86AsmParser.a
+libLLVMX86CodeGen.a
+libLLVMX86Desc.a
+libLLVMX86Disassembler.a
+libLLVMX86Info.a
+libLLVMX86TargetMCA.a
+libLLVMXCoreCodeGen.a
+libLLVMXCoreDesc.a
+libLLVMXCoreDisassembler.a
+libLLVMXCoreInfo.a
+libLLVMXRay.a
+libLLVMipo.a
+libLTO.dylib
+libMLIR.dylib
+libMLIRAMDGPUDialect.a
+libMLIRAMDGPUToROCDL.a
+libMLIRAMDGPUTransforms.a
+libMLIRAMDGPUUtils.a
+libMLIRAMXDialect.a
+libMLIRAMXToLLVMIRTranslation.a
+libMLIRAMXTransforms.a
+libMLIRAffineAnalysis.a
+libMLIRAffineDialect.a
+libMLIRAffineToStandard.a
+libMLIRAffineTransformOps.a
+libMLIRAffineTransforms.a
+libMLIRAffineUtils.a
+libMLIRAnalysis.a
+libMLIRArithAttrToLLVMConversion.a
+libMLIRArithDialect.a
+libMLIRArithToLLVM.a
+libMLIRArithToSPIRV.a
+libMLIRArithTransforms.a
+libMLIRArithUtils.a
+libMLIRArithValueBoundsOpInterfaceImpl.a
+libMLIRArmNeon2dToIntr.a
+libMLIRArmNeonDialect.a
+libMLIRArmNeonToLLVMIRTranslation.a
+libMLIRArmSMEDialect.a
+libMLIRArmSMEToLLVMIRTranslation.a
+libMLIRArmSMETransforms.a
+libMLIRArmSMEUtils.a
+libMLIRArmSVEDialect.a
+libMLIRArmSVEToLLVMIRTranslation.a
+libMLIRArmSVETransforms.a
+libMLIRAsmParser.a
+libMLIRAsyncDialect.a
+libMLIRAsyncToLLVM.a
+libMLIRAsyncTransforms.a
+libMLIRBufferizationDialect.a
+libMLIRBufferizationToMemRef.a
+libMLIRBufferizationTransformOps.a
+libMLIRBufferizationTransforms.a
+libMLIRBuiltinToLLVMIRTranslation.a
+libMLIRBytecodeOpInterface.a
+libMLIRBytecodeReader.a
+libMLIRBytecodeWriter.a
+libMLIRCAPIArith.a
+libMLIRCAPIAsync.a
+libMLIRCAPIControlFlow.a
+libMLIRCAPIConversion.a
+libMLIRCAPIDebug.a
+libMLIRCAPIExecutionEngine.a
+libMLIRCAPIFunc.a
+libMLIRCAPIGPU.a
+libMLIRCAPIIR.a
+libMLIRCAPIInterfaces.a
+libMLIRCAPILLVM.a
+libMLIRCAPILinalg.a
+libMLIRCAPIMLProgram.a
+libMLIRCAPIMath.a
+libMLIRCAPIMemRef.a
+libMLIRCAPIPDL.a
+libMLIRCAPIQuant.a
+libMLIRCAPIRegisterEverything.a
+libMLIRCAPISCF.a
+libMLIRCAPIShape.a
+libMLIRCAPISparseTensor.a
+libMLIRCAPITensor.a
+libMLIRCAPITransformDialect.a
+libMLIRCAPITransforms.a
+libMLIRCAPIVector.a
+libMLIRCallInterfaces.a
+libMLIRCastInterfaces.a
+libMLIRComplexDialect.a
+libMLIRComplexToLLVM.a
+libMLIRComplexToLibm.a
+libMLIRComplexToSPIRV.a
+libMLIRComplexToStandard.a
+libMLIRControlFlowDialect.a
+libMLIRControlFlowInterfaces.a
+libMLIRControlFlowToLLVM.a
+libMLIRControlFlowToSPIRV.a
+libMLIRCopyOpInterface.a
+libMLIRDLTIDialect.a
+libMLIRDataLayoutInterfaces.a
+libMLIRDebug.a
+libMLIRDerivedAttributeOpInterface.a
+libMLIRDestinationStyleOpInterface.a
+libMLIRDialect.a
+libMLIRDialectUtils.a
+libMLIREmitCDialect.a
+libMLIRExecutionEngine.a
+libMLIRExecutionEngineUtils.a
+libMLIRFromLLVMIRTranslationRegistration.a
+libMLIRFuncAllExtensions.a
+libMLIRFuncDialect.a
+libMLIRFuncInlinerExtension.a
+libMLIRFuncToLLVM.a
+libMLIRFuncToSPIRV.a
+libMLIRFuncTransforms.a
+libMLIRGPUDialect.a
+libMLIRGPUToGPURuntimeTransforms.a
+libMLIRGPUToLLVMIRTranslation.a
+libMLIRGPUToNVVMTransforms.a
+libMLIRGPUToROCDLTransforms.a
+libMLIRGPUToSPIRV.a
+libMLIRGPUToVulkanTransforms.a
+libMLIRGPUTransformOps.a
+libMLIRGPUTransforms.a
+libMLIRIR.a
+libMLIRIRDL.a
+libMLIRIndexDialect.a
+libMLIRIndexToLLVM.a
+libMLIRInferIntRangeCommon.a
+libMLIRInferIntRangeInterface.a
+libMLIRInferTypeOpInterface.a
+libMLIRJitRunner.a
+libMLIRLLVMCommonConversion.a
+libMLIRLLVMDialect.a
+libMLIRLLVMIRToLLVMTranslation.a
+libMLIRLLVMIRTransforms.a
+libMLIRLLVMToLLVMIRTranslation.a
+libMLIRLinalgDialect.a
+libMLIRLinalgToLLVM.a
+libMLIRLinalgToStandard.a
+libMLIRLinalgTransformOps.a
+libMLIRLinalgTransforms.a
+libMLIRLinalgUtils.a
+libMLIRLoopLikeInterface.a
+libMLIRLspServerLib.a
+libMLIRLspServerSupportLib.a
+libMLIRMLProgramDialect.a
+libMLIRMaskableOpInterface.a
+libMLIRMaskingOpInterface.a
+libMLIRMathDialect.a
+libMLIRMathToFuncs.a
+libMLIRMathToLLVM.a
+libMLIRMathToLibm.a
+libMLIRMathToSPIRV.a
+libMLIRMathTransforms.a
+libMLIRMemRefDialect.a
+libMLIRMemRefToLLVM.a
+libMLIRMemRefToSPIRV.a
+libMLIRMemRefTransformOps.a
+libMLIRMemRefTransforms.a
+libMLIRMemRefUtils.a
+libMLIRMemorySlotInterfaces.a
+libMLIRMlirOptMain.a
+libMLIRNVGPUDialect.a
+libMLIRNVGPUToNVVM.a
+libMLIRNVGPUTransformOps.a
+libMLIRNVGPUTransforms.a
+libMLIRNVGPUUtils.a
+libMLIRNVVMDialect.a
+libMLIRNVVMToLLVM.a
+libMLIRNVVMToLLVMIRTranslation.a
+libMLIRObservers.a
+libMLIROpenACCDialect.a
+libMLIROpenACCToLLVMIRTranslation.a
+libMLIROpenACCToSCF.a
+libMLIROpenMPDialect.a
+libMLIROpenMPToLLVM.a
+libMLIROpenMPToLLVMIRTranslation.a
+libMLIROptLib.a
+libMLIRPDLDialect.a
+libMLIRPDLInterpDialect.a
+libMLIRPDLLAST.a
+libMLIRPDLLCodeGen.a
+libMLIRPDLLODS.a
+libMLIRPDLToPDLInterp.a
+libMLIRParallelCombiningOpInterface.a
+libMLIRParser.a
+libMLIRPass.a
+libMLIRPluginsLib.a
+libMLIRPresburger.a
+libMLIRQuantDialect.a
+libMLIRQuantUtils.a
+libMLIRROCDLDialect.a
+libMLIRROCDLToLLVMIRTranslation.a
+libMLIRReconcileUnrealizedCasts.a
+libMLIRReduce.a
+libMLIRReduceLib.a
+libMLIRRewrite.a
+libMLIRRuntimeVerifiableOpInterface.a
+libMLIRSCFDialect.a
+libMLIRSCFToControlFlow.a
+libMLIRSCFToGPU.a
+libMLIRSCFToOpenMP.a
+libMLIRSCFToSPIRV.a
+libMLIRSCFTransformOps.a
+libMLIRSCFTransforms.a
+libMLIRSCFUtils.a
+libMLIRSPIRVBinaryUtils.a
+libMLIRSPIRVConversion.a
+libMLIRSPIRVDeserialization.a
+libMLIRSPIRVDialect.a
+libMLIRSPIRVModuleCombiner.a
+libMLIRSPIRVSerialization.a
+libMLIRSPIRVToLLVM.a
+libMLIRSPIRVTransforms.a
+libMLIRSPIRVTranslateRegistration.a
+libMLIRSPIRVUtils.a
+libMLIRShapeDialect.a
+libMLIRShapeOpsTransforms.a
+libMLIRShapeToStandard.a
+libMLIRShapedOpInterfaces.a
+libMLIRSideEffectInterfaces.a
+libMLIRSparseTensorDialect.a
+libMLIRSparseTensorPipelines.a
+libMLIRSparseTensorRuntime.a
+libMLIRSparseTensorTransforms.a
+libMLIRSparseTensorUtils.a
+libMLIRSupport.a
+libMLIRTableGen.a
+libMLIRTargetCpp.a
+libMLIRTargetLLVMIRExport.a
+libMLIRTargetLLVMIRImport.a
+libMLIRTblgenLib.a
+libMLIRTensorDialect.a
+libMLIRTensorInferTypeOpInterfaceImpl.a
+libMLIRTensorTilingInterfaceImpl.a
+libMLIRTensorToLinalg.a
+libMLIRTensorToSPIRV.a
+libMLIRTensorTransformOps.a
+libMLIRTensorTransforms.a
+libMLIRTensorUtils.a
+libMLIRTilingInterface.a
+libMLIRToLLVMIRTranslationRegistration.a
+libMLIRTosaDialect.a
+libMLIRTosaToArith.a
+libMLIRTosaToLinalg.a
+libMLIRTosaToSCF.a
+libMLIRTosaToTensor.a
+libMLIRTosaTransforms.a
+libMLIRTransformDialect.a
+libMLIRTransformDialectTransforms.a
+libMLIRTransformDialectUtils.a
+libMLIRTransformPDLExtension.a
+libMLIRTransformUtils.a
+libMLIRTransforms.a
+libMLIRTranslateLib.a
+libMLIRUBDialect.a
+libMLIRUBToLLVM.a
+libMLIRUBToSPIRV.a
+libMLIRValueBoundsOpInterface.a
+libMLIRVectorDialect.a
+libMLIRVectorInterfaces.a
+libMLIRVectorToArmSME.a
+libMLIRVectorToGPU.a
+libMLIRVectorToLLVM.a
+libMLIRVectorToSCF.a
+libMLIRVectorToSPIRV.a
+libMLIRVectorTransformOps.a
+libMLIRVectorTransforms.a
+libMLIRVectorUtils.a
+libMLIRViewLikeInterface.a
+libMLIRX86VectorDialect.a
+libMLIRX86VectorToLLVMIRTranslation.a
+libMLIRX86VectorTransforms.a
+libPolly.a
+libPollyISL.a
+libRemarks.dylib
+libclang-cpp.dylib
+libclang.dylib
+libclangAPINotes.a
+libclangARCMigrate.a
+libclangAST.a
+libclangASTMatchers.a
+libclangAnalysis.a
+libclangAnalysisFlowSensitive.a
+libclangAnalysisFlowSensitiveModels.a
+libclangApplyReplacements.a
+libclangBasic.a
+libclangChangeNamespace.a
+libclangCodeGen.a
+libclangCrossTU.a
+libclangDaemon.a
+libclangDaemonTweaks.a
+libclangDependencyScanning.a
+libclangDirectoryWatcher.a
+libclangDoc.a
+libclangDriver.a
+libclangDynamicASTMatchers.a
+libclangEdit.a
+libclangExtractAPI.a
+libclangFormat.a
+libclangFrontend.a
+libclangFrontendTool.a
+libclangHandleCXX.a
+libclangHandleLLVM.a
+libclangIncludeCleaner.a
+libclangIncludeFixer.a
+libclangIncludeFixerPlugin.a
+libclangIndex.a
+libclangIndexSerialization.a
+libclangInterpreter.a
+libclangLex.a
+libclangMove.a
+libclangParse.a
+libclangPseudo.a
+libclangPseudoCLI.a
+libclangPseudoCXX.a
+libclangPseudoGrammar.a
+libclangQuery.a
+libclangReorderFields.a
+libclangRewrite.a
+libclangRewriteFrontend.a
+libclangSema.a
+libclangSerialization.a
+libclangStaticAnalyzerCheckers.a
+libclangStaticAnalyzerCore.a
+libclangStaticAnalyzerFrontend.a
+libclangSupport.a
+libclangTidy.a
+libclangTidyAbseilModule.a
+libclangTidyAlteraModule.a
+libclangTidyAndroidModule.a
+libclangTidyBoostModule.a
+libclangTidyBugproneModule.a
+libclangTidyCERTModule.a
+libclangTidyConcurrencyModule.a
+libclangTidyCppCoreGuidelinesModule.a
+libclangTidyDarwinModule.a
+libclangTidyFuchsiaModule.a
+libclangTidyGoogleModule.a
+libclangTidyHICPPModule.a
+libclangTidyLLVMLibcModule.a
+libclangTidyLLVMModule.a
+libclangTidyLinuxKernelModule.a
+libclangTidyMPIModule.a
+libclangTidyMain.a
+libclangTidyMiscModule.a
+libclangTidyModernizeModule.a
+libclangTidyObjCModule.a
+libclangTidyOpenMPModule.a
+libclangTidyPerformanceModule.a
+libclangTidyPlugin.a
+libclangTidyPortabilityModule.a
+libclangTidyReadabilityModule.a
+libclangTidyUtils.a
+libclangTidyZirconModule.a
+libclangTooling.a
+libclangToolingASTDiff.a
+libclangToolingCore.a
+libclangToolingInclusions.a
+libclangToolingInclusionsStdlib.a
+libclangToolingRefactoring.a
+libclangToolingSyntax.a
+libclangTransformer.a
+libclangdMain.a
+libclangdRemoteIndex.a
+libclangdSupport.a
+libclangdXpcJsonConversions.a
+libclangdXpcTransport.a
+libear
+libfindAllSymbols.a
+liblldCOFF.a
+liblldCommon.a
+liblldELF.a
+liblldMachO.a
+liblldMinGW.a
+liblldWasm.a
+liblldb.17.0.6.dylib
+liblldb.dylib
+libmlir_async_runtime.dylib
+libmlir_c_runner_utils.dylib
+libmlir_float16_utils.dylib
+libmlir_runner_utils.dylib
+libomp.dylib
+libscanbuild
+libunwind.1.0.dylib
+libunwind.1.dylib
+libunwind.a
+libunwind.dylib
+objects-Release
+python3.10
+python3.11
+python3.12
+python3.7
+python3.8
+python3.9
+```
+
+# MILESTONE SUCCESSFULLY MET: Mar 31. compiled the simplest c++ program possible with LLVM
+
+## project code:
+
+```cpp
+#include "llvm/Bitcode/BitcodeWriter.h" 
+#include "llvm/IR/BasicBlock.h"
+#include "llvm/IR/Constants.h"
+#include "llvm/IR/DerivedTypes.h"
+#include "llvm/IR/Function.h"
+#include "llvm/IR/InstrTypes.h"
+#include "llvm/IR/Instruction.h"
+#include "llvm/IR/Instructions.h"
+#include "llvm/IR/LLVMContext.h"
+#include "llvm/IR/Module.h"
+#include "llvm/IR/Type.h"
+#include "llvm/Support/raw_ostream.h"
+
+using namespace llvm;
+
+int main() {
+  LLVMContext Context;
+
+  // Create the "module" or "program" or "translation unit" to hold the
+  // function
+  Module *M = new Module("test", Context);
+
+  // Create the main function: first create the type 'int ()'
+  FunctionType *FT =
+    FunctionType::get(Type::getInt32Ty(Context), /*not vararg*/false);
+
+  // By passing a module as the last parameter to the Function constructor,
+  // it automatically gets appended to the Module.
+  Function *F = Function::Create(FT, Function::ExternalLinkage, "main", M);
+
+  // Add a basic block to the function... again, it automatically inserts
+  // because of the last argument.
+  BasicBlock *BB = BasicBlock::Create(Context, "EntryBlock", F);
+
+  // Get pointers to the constant integers...
+  Value *Two = ConstantInt::get(Type::getInt32Ty(Context), 2);
+  Value *Three = ConstantInt::get(Type::getInt32Ty(Context), 3);
+
+  // Create the add instruction... does not insert...
+  Instruction *Add = BinaryOperator::Create(Instruction::Add, Two, Three,
+                                            "addresult");
+
+  // explicitly insert it into the basic block...
+  Add->insertInto(BB, BB->end());
+
+  // Create the return instruction and add it to the basic block
+  ReturnInst::Create(Context, Add)->insertInto(BB, BB->end());
+
+  // Output the bitcode file to stdout
+  WriteBitcodeToFile(*M, outs());
+
+  // Delete the module and all of its contents.
+  delete M;
+  return 0;
+}
+```
+
+## CMakeLists.txt config:
+
+```
+cmake_minimum_required(VERSION 3.29)
+set(CMAKE_CXX_STANDARD 20)
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
+endif()
+
+project(ModuleMakerTest)
+
+set(LLVM_DIR /usr/local/Cellar/llvm/)
+
+find_package(LLVM REQUIRED CONFIG)
+
+include_directories(${LLVM_INCLUDE_DIRS})
+
+add_definitions(${LLVM_DEFINITIONS})
+
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_OSX_ARCHITECTURES x86_64)
+set(CMAKE_OSX_DEPLOYMENT_TARGET 14.4)
+set(CMAKE_OSX_SYSROOT /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk)
+
+add_executable(ModuleMakerTest src/ModuleMakerTest.cpp)
+
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+
+target_link_libraries(ModuleMakerTest PRIVATE LLVMCore LLVMSupport LLVMBitWriter)
+```
+
+
+
+## terminal output:
+
+```bash
+~/dev/ModuleMakerTest ± ●● main
+❯ cmake .
+-- The C compiler identification is AppleClang 15.0.0.15000309
+-- The CXX compiler identification is AppleClang 15.0.0.15000309
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test HAVE_FFI_CALL
+-- Performing Test HAVE_FFI_CALL - Success
+-- Found FFI: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libffi.tbd
+-- Looking for histedit.h
+-- Looking for histedit.h - found
+-- Found LibEdit: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include (found version "2.11")
+-- Performing Test Terminfo_LINKABLE
+-- Performing Test Terminfo_LINKABLE - Success
+-- Found Terminfo: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libcurses.tbd
+-- Found ZLIB: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libz.tbd (found version "1.2.12")
+-- Found zstd: /usr/local/lib/libzstd.dylib
+-- Found LibXml2: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/lib/libxml2.tbd (found version "2.9.13")
+-- Configuring done (1.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/ash/dev/ModuleMakerTest
+
+~/dev/ModuleMakerTest ± ● main
+❯ make
+[ 50%] Building CXX object CMakeFiles/ModuleMakerTest.dir/src/ModuleMakerTest.cpp.o
+[100%] Linking CXX executable bin/ModuleMakerTest
+[100%] Built target ModuleMakerTest
+
+~/dev/ModuleMakerTest ± ●● main
+❯ ./bin/ModuleMakerTest 
+BC??5b
+      0$JY?f????
+                Q?L!
+                    5
+                     !?#?A?I29??
+                                ?b?
+                                   EB?
+                                      Bd2K
+22?Hp?!#D??A?d? CF? ?22?*(*?1|?\? ??? 
+"f?B??RB?ɐq?PH
+	&C?B2&
+?#?d `!
+Esb1????f=?C8?ÌB?yxs?q
+                      ???3
+                          B??Ρf0=?C8??=?C=?=?x?tpyH?ppzpvx?p ????0n0???P3??!?!?af0?;??;?C9?<??<?;??v`{h7h?rh7??p??p`v(v?vx?w???q?r??y??,???????0bȡ?̡??a?!ā?a֐C9?C9?C9?C9??8?C8?;??/??<??;?;??
+    ?i?pX?rp?thx`?t?t???S??P??@? ?P3 (???A?!܁?????fQ8?C:??;?P$v`{h7`?wxx?QL???P3j?a?!??~??!?aT??8??;?C=?C9??<?C;??;?Ì?
+?y??w?z(r??\????P?0#??A?????fH;??=???8?C9??<??9??;?<?H?v`?qX????`??? ?0? ?Pn?0?0?????P?0#??a???!?!?!?!?!f ?;?C=?9??9?X?ppwxzH?wp????0???@??0?s?w?_??pp?t??tЇr???A9??8?C=?C9?@Ġʡ?A??f$c0???0?@?0C!?usH?_??|??r???<??<??8?C:??;?Ì?
+                                         H!Ba?!??R??-
+
+?A???!?!??4?`?P? ?@? ?P????y(?p`vx?z(rXp??8?;??=??k?!??? ?a? ??aС?a?a?? ?P?
+                                                                            ?usH??8??;?C9??9??;?C9?=?;??<??;?;?=??<?C8??a A,?"('?A86???L?x?a??
+q 2"??]
+       ?main17.0.6test%                                                                     
+~/dev/ModuleMakerTest ± ●● main
+❯ 
+```
 
 
 
 
 
-
-
-# DEADLINE: (updated) next FRIDAY Apr 5 I have to compile the simplest c++ program possible with LLVM
