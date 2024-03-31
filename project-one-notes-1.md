@@ -1792,7 +1792,13 @@ q 2"??]
 ❯ 
 ```
 
+## TL;DR:
 
-
-
+- config:
+  - build with brew llvm install: `set(LLVM_DIR /usr/local/Cellar/llvm/)`
+  - specify three libs: `target_link_libraries(ModuleMakerTest PRIVATE LLVMCore LLVMSupport LLVMBitWriter)`
+- then: 
+  - `cmake .`
+  - `make`
+  - `./my_project`
 
