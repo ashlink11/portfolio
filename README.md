@@ -1,6 +1,8 @@
 # portfolio
 
-- current progress in [project one doc](./project-one-notes-1.md)
+## project one:
+- (completed) [project one config notes](./project-one-config-notes.md)
+- (in progress) [project one advanced llvm notes](./project-one-advanced-llvm-notes.md)
 
 ## overall strategy:
 
