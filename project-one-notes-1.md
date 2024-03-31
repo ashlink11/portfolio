@@ -1,4 +1,5 @@
-# project one (llvm project) draft 1
+# project one (llvm project) config, build & run notes
+#### completed: Mar 31, 2024
 
 ## c++ program code ideas: 
 
