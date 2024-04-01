@@ -303,7 +303,11 @@ next:
   -  If "LLVM" provides a separate development package or SDK, be sure it has been installed.
   -  Set the macOS system root `set(CMAKE_OSX_SYSROOT /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk)`
 
-
+additional portfolio notes:
+- remember when i had the goal to build a compiler and work that into these projects
+- study leetcode arrays, for example cityscape problem; model data structures and algos concepts
+- use parallel visual and verbal problem solving
+- research ISO/ISEE/x86, etc. standards, protocols, etc. to see if/how they apply to these projects (esp new standards and CUDA Math API standards, etc.)
 
 
 
