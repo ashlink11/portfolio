@@ -73,3 +73,113 @@ Consider using a debugger to step through your code and inspect the values of va
 Refer to the LLVM documentation on WriteBitcodeToFile for more details and alternative ways to write the module (https://llvm.org/docs/BitCodeFormat.html).
 Explore LLVM's tools like lli for interpreting the bitcode and running the generated code.
 ```
+
+## progress tue april 2, 2024:
+
+- attempt change writing to file then output to just writing to file
+
+```cpp
+  // Output the bitcode file to stdout (makes gibberish in terminal)
+  // WriteBitcodeToFile(*M, outs());
+
+  // write the bitcode to a file instead
+  std::error_code EC;
+  raw_fd_ostream OutFile("ModuleMakerTest.bc", EC, sys::fs::open_flags::OF_CREAT | sys::fs::open_flags::OF_WRONLY);
+```
+
+- output:
+
+```bash
+~/dev/ModuleMakerTest ± ● main
+❯ cmake .
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/ash/dev/ModuleMakerTest
+
+~/dev/ModuleMakerTest ± ● main
+❯ make
+[ 50%] Building CXX object CMakeFiles/ModuleMakerTest.dir/src/ModuleMakerTest.cpp.o
+/Users/ash/dev/ModuleMakerTest/src/ModuleMakerTest.cpp:69:61: error: no member named 'open_flags' in namespace 'llvm::sys::fs'; did you mean 'OpenFlags'?
+  raw_fd_ostream OutFile("ModuleMakerTest.bc", EC, sys::fs::open_flags::OF_CREAT | sys::fs::open_flags::OF_WRONLY);
+                                                   ~~~~~~~~~^~~~~~~~~~
+                                                            OpenFlags
+/usr/local/opt/llvm/include/llvm/Support/raw_ostream.h:42:6: note: 'OpenFlags' declared here
+enum OpenFlags : unsigned;
+     ^
+/Users/ash/dev/ModuleMakerTest/src/ModuleMakerTest.cpp:69:61: error: incomplete type 'llvm::sys::fs::OpenFlags' named in nested name specifier
+  raw_fd_ostream OutFile("ModuleMakerTest.bc", EC, sys::fs::open_flags::OF_CREAT | sys::fs::open_flags::OF_WRONLY);
+                                                   ~~~~~~~~~^~~~~~~~~~~~
+/Users/ash/dev/ModuleMakerTest/src/ModuleMakerTest.cpp:69:93: error: no member named 'open_flags' in namespace 'llvm::sys::fs'; did you mean 'OpenFlags'?
+  raw_fd_ostream OutFile("ModuleMakerTest.bc", EC, sys::fs::open_flags::OF_CREAT | sys::fs::open_flags::OF_WRONLY);
+                                                                                   ~~~~~~~~~^~~~~~~~~~
+                                                                                            OpenFlags
+/usr/local/opt/llvm/include/llvm/Support/raw_ostream.h:42:6: note: 'OpenFlags' declared here
+enum OpenFlags : unsigned;
+     ^
+/Users/ash/dev/ModuleMakerTest/src/ModuleMakerTest.cpp:69:93: error: incomplete type 'llvm::sys::fs::OpenFlags' named in nested name specifier
+  raw_fd_ostream OutFile("ModuleMakerTest.bc", EC, sys::fs::open_flags::OF_CREAT | sys::fs::open_flags::OF_WRONLY);
+                                                                                   ~~~~~~~~~^~~~~~~~~~~~
+4 errors generated.
+make[2]: *** [CMakeFiles/ModuleMakerTest.dir/src/ModuleMakerTest.cpp.o] Error 1
+make[1]: *** [CMakeFiles/ModuleMakerTest.dir/all] Error 2
+make: *** [all] Error 2
+```
+
+- ^errors with the other method
+- back to the outs() method
+- can't read bitcode but try the incremental llvm commands instead:
+
+```
+❯ opt -S src/ModuleMakerTest.cpp -o ModuleMakerTest.ll
+opt: src/ModuleMakerTest.cpp:1:1: error: expected top-level entity
+#include "llvm/Bitcode/BitcodeWriter.h" 
+^
+# then had to move .cpp comments to bottom but didnt work
+
+~/dev/ModuleMakerTest ± ●● main
+❯ opt ModuleMakerTest.bc -o ModuleMakerTest.opt.bc
+opt: ModuleMakerTest.bc: error: Could not open input file: No such file or directory
+```
+
+next steps:
+- dont use `opt` commands but something else like `clang`?
+- remember, i got [this non-llvm lib tutorial from llvm docs](https://llvm.org/docs/GettingStarted.html#an-example-using-the-llvm-tool-chain) to run, so try/review those commands first for base process
+- then can try [this basic llvm docs llvm lib config/build/run tutorial](https://llvm.org/docs/GettingStarted.html#getting-the-source-code-and-building-llvm) for incremental compiling commands
+- more possibilities:
+  > Consider using a debugger to step through your code and inspect the values of variables like M to verify that the module is being created correctly before writing it to a file.
+  > Refer to the LLVM documentation on WriteBitcodeToFile for more details and alternative ways to write the module (https://llvm.org/docs/BitCodeFormat.html).
+  > Explore LLVM's tools like lli for interpreting the bitcode and running the generated code.
+- goal: "generate an assembly-like representation of the module in a file named `ModuleMakerTest.ll`."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
