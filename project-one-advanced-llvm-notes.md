@@ -151,7 +151,51 @@ next steps:
   > Explore LLVM's tools like lli for interpreting the bitcode and running the generated code.
 - goal: "generate an assembly-like representation of the module in a file named `ModuleMakerTest.ll`."
 
+## progress wed april 3
 
+- [non-llvm example on llvm.org](https://llvm.org/docs/GettingStarted.html#an-example-using-the-llvm-tool-chain)
+  - `clang hello.c -o hello` to native exe
+  - `clang -O3 -emit-llvm hello.c -c -o hello.bc` to LLVM bitcode file
+  - `./hello` run and `lli hello.bc` to run with LLVM JIT (`lli`)
+  - `llvm-dis < hello.bc | less` to look at LLVM ASM assembly
+  - `llc hello.bc -o hello.s` compile to native ASM using LLC code gen
+  - `gcc hello.s -o hello.native` assemble ASM into a native exe
+  - `./hello.native` run native exe
+- [custom build basic llvm.org llvm lib config/build/run tutorial](https://llvm.org/docs/GettingStarted.html#getting-the-source-code-and-building-llvm)
+  - use git clone shallow for llvm install
+  - configure llvm and clang `cmake -S llvm -B build -G <generator> [options]` (for advanced projects)
+  - build llvm and clang `cmake --build build [--target <target>]`
+  - build only llvm and no other sub-projects (???todo: understand this and which command is which? they both build.) - set up an llvm build with debugging info, then compile llvm and run llvm tests `cmake -S llvm -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug` then `ninja -C build check-llvm`
+- [stand-alone builds (use pre-built native clang/llvm libs)](https://llvm.org/docs/GettingStarted.html#stand-alone-builds)
+  -  once llvm is installed:
+ 
+```bash
+cmake -G Ninja -S path/to/llvm-project/$subproj \
+      -B $buildir_subproj \
+      -DLLVM_EXTERNAL_LIT=/path/to/lit \
+      -DLLVM_ROOT=/path/to/llvm/install/prefix
+```
+
+```
+Both the LLVM_ROOT and LLVM_EXTERNAL_LIT options are required to do stand-alone builds for all sub-projects. Additional required options for each sub-project can be found in the table below.
+
+The check-$subproj and install build targets are supported for the sub-projects listed in the table below.
+
+Sub-Project - Required Sub-Directories - Required CMake Options
+
+llvm - llvm, cmake, third-party - LLVM_INSTALL_UTILS=ON
+
+clang - clang, cmake - CLANG_INCLUDE_TESTS=ON (Required for check-clang only)
+
+lld - lld, cmake - n/a options
+```
+
+notes:
+- these might be useful required options for project two (#projecttwo)
+- probably don't need for this project unless outs() is complicated.
+- what is a sub-project?
+- different configs probably aren't needed.
+- **focus on c++ outs() code next and looking up the specific bug.**
 
 
 
