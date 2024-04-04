@@ -139,7 +139,9 @@ note:
        - basic search algo DFS/BFS recursion and find the exit condition
      - should correspond to basic LLVM IR
      - still study std LLVM IR though.
+   - **_apr 4 update_**: finished it with one basic block
 3. modular project (SIMT?)
+   - update: 
    - mojo(python)/MLIR IR
    - MNIST dataset unless i can think of something better
      - can i apply current models to this?
@@ -147,6 +149,7 @@ note:
    - try to make the project run in the Modular browser env for proving the project
 4. cuda project
    - nvcc/ptx (parallel thread execution) (SIMT?)
+   - **_apr 4 update_**: demo c++ std lib & mult basic blocks here instead of project one.
    - choose: c/c++ or python/PyCUDA
      - do i want to demonstrate just my IR experience or possibly also ML experience?
    - can i do an integration of all best models thus far?
@@ -182,6 +185,7 @@ then 1.5 more months till second round of applications:
   - ideal:
     - total time: 4 weeks
     - finished by: April 30
+    - (_**code done apr 4**_)
   - deadline: May 31
 
 - Modular project 
@@ -309,7 +313,11 @@ additional portfolio notes:
 - use parallel visual and verbal problem solving
 - research ISO/ISEE/x86, etc. standards, protocols, etc. to see if/how they apply to these projects (esp new standards and CUDA Math API standards, etc.)
 
-
+#### apr 4, 2024 next steps:
+- use this doc to do project one code analysis
+- archive the rest of project one high-med-low level plans out of this readme
+- create frontend asap to demo project one
+- 
 
 
 
