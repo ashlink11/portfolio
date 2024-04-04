@@ -197,14 +197,131 @@ notes:
 - different configs probably aren't needed.
 - **focus on c++ outs() code next and looking up the specific bug.**
 
+## progress thurs apr 4, 2024
 
+- updated the outs() to this:
 
+```cpp
+#include "llvm/Bitcode/BitcodeWriter.h" 
+#include "llvm/IR/BasicBlock.h"
+#include "llvm/IR/Constants.h"
+#include "llvm/IR/DerivedTypes.h"
+#include "llvm/IR/Function.h"
+#include "llvm/IR/InstrTypes.h"
+#include "llvm/IR/Instruction.h"
+#include "llvm/IR/Instructions.h"
+#include "llvm/IR/LLVMContext.h"
+#include "llvm/IR/Module.h"
+#include "llvm/IR/Type.h"
+#include "llvm/Support/raw_ostream.h"
+#include "llvm/Support/FileSystem.h" // Added for file operations
+#include <fstream>
 
+using namespace llvm;
 
+int main() {
+  LLVMContext Context;
 
+  // Create the "module" or "program" or "translation unit" to hold the
+  // function
+  Module *M = new Module("test", Context);
 
+  // Create the main function: first create the type 'int ()'
+  FunctionType *FT =
+    FunctionType::get(Type::getInt32Ty(Context), /*not vararg*/false);
 
+  // By passing a module as the last parameter to the Function constructor,
+  // it automatically gets appended to the Module.
+  Function *F = Function::Create(FT, Function::ExternalLinkage, "main", M);
 
+  // Add a basic block to the function... again, it automatically inserts
+  // because of the last argument.
+  BasicBlock *BB = BasicBlock::Create(Context, "EntryBlock", F);
+
+  // Get pointers to the constant integers...
+  Value *Two = ConstantInt::get(Type::getInt32Ty(Context), 2);
+  Value *Three = ConstantInt::get(Type::getInt32Ty(Context), 3);
+
+  // Create the add instruction... does not insert...
+  Instruction *Add = BinaryOperator::Create(Instruction::Add, Two, Three,
+                                            "addresult");
+
+  // explicitly insert it into the basic block...
+  Add->insertInto(BB, BB->end());
+
+  // Create the return instruction and add it to the basic block
+  ReturnInst::Create(Context, Add)->insertInto(BB, BB->end());
+
+  // Output the bitcode file to stdout but    
+  // this makes gibberish in terminal
+  // WriteBitcodeToFile(*M, outs());
+
+  // write the bitcode to a file instead
+  // std::error_code EC;
+  // raw_fd_ostream OutFile("ModuleMakerTest.bc", EC, sys::fs::open_flags::OF_CREAT | sys::fs::open_flags::OF_WRONLY);
+
+    // Output the bitcode file to a file
+  std::error_code EC;
+  raw_fd_ostream OutFile("ModuleMakerTest.bc", EC, sys::fs::OF_None); // Open the file for writing
+  WriteBitcodeToFile(*M, OutFile); // Write the bitcode to the file
+
+  if (EC) {
+    errs() << "Error writing bitcode to file: " << EC.message() << '\n';
+    return 1;
+  }
+
+  // Delete the module and all of its contents.
+  delete M;
+  return 0;
+}
+
+//===- examples/ModuleMaker/ModuleMaker.cpp - Example project ---*- C++ -*-===//
+//
+// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+// See https://llvm.org/LICENSE.txt for license information.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+//
+//===----------------------------------------------------------------------===//
+//
+// This programs is a simple example that creates an LLVM module "from scratch",
+// emitting it as a bitcode file to standard out.  This is just to show how
+// LLVM projects work and to demonstrate some of the LLVM APIs.
+//
+//===----------------------------------------------------------------------===//
+
+```
+
+- ^`cmake .` and `make` of that created the `ModuleMakerTest` .exe in bin
+- running the .exe created a `ModuleMakerTest.bc` file in the top-level dir
+- `llvm-dis ModuleMakerTest.bc -o ModuleMakerTest.ll` created `ModuleMakerTest.ll` file in the top-level dir
+- ^opening that file showed:
+
+```ll
+; ModuleID = 'ModuleMakerTest.bc'
+source_filename = "test"
+
+define i32 @main() {
+EntryBlock:
+  %addresult = add i32 2, 3
+  ret i32 %addresult
+}
+```
+
+notes:
+- this is huge progress. now i have the simplest possible llvm program running on my laptop and showing the LLVM ASM code which is really simple so i can understand it. this is the foundation to building all the rest of the projects.
+
+next steps:
+- wrap up the analysis of the LLVM ASM code
+- get the frontend up and running
+- that will complete Project One
+- ideal timeline is:
+> LLVM project
+> ideal:
+  > total time: 4 weeks
+  > finished by: April 30
+  > deadline: May 31
+
+- so i should finish it way before the deadline which gives way more time for projects two and three. and project three is CUDA which is the most important.
 
 
 
