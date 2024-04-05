@@ -2,7 +2,8 @@
 
 ## project one:
 - (completed) [project one config notes](./project-one-config-notes.md)
-- (in progress) [project one advanced llvm notes](./project-one-advanced-llvm-notes.md)
+- (completed) [project one advanced llvm notes](./project-one-advanced-llvm-notes.md)
+- (in progress) [project one summary notes](./project-one-summary-notes.md)
 
 ## overall strategy:
 
@@ -317,7 +318,9 @@ additional portfolio notes:
 - use this doc to do project one code analysis
 - archive the rest of project one high-med-low level plans out of this readme
 - create frontend asap to demo project one
-- 
+
+#### progress apr 5, 2024:
+- new project one summary readme with high/mid/low levels structure
 
 
 
