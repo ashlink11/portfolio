@@ -4,6 +4,7 @@
 - (completed) [project one config notes](./project-one-config-notes.md)
 - (completed) [project one advanced llvm notes](./project-one-advanced-llvm-notes.md)
 - (in progress) [project one summary notes](./project-one-summary-notes.md)
+- (in progress) [project one frontend notes](./project-one-frontend-notes.md)
 
 ## overall strategy:
 
