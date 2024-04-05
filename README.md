@@ -11,7 +11,7 @@
 - high-level
 - mid-level
 - and corresponding low-level code
-
+- use parallel visual and verbal problem solving for present this portfolio
 
 # meta-level:
 
@@ -261,6 +261,7 @@ notes:
 ## low-level frontend plan 
 
 - try out v0.dev next
+- actually try out vercel frontend components tools
 
 ## low-level backend plan 
 
@@ -290,7 +291,7 @@ notes:
     - will include arith ops for wts, memory access of course (registers, cache, RAM ideally but maybe save that for projects 2 or 3)
     - will include values (vars and results)
     - make sure to use pointer but its fine w/o array and struct actually for this one
-    - no global var is fine i think till later
+    - no global var is fine i think till later (#todo for project 2/3)
     - the function calls will be the node creations and the search
     - the control flow is the loop
     - make sure to map to SSA and talk about importance of explicit single assignments in terms of basic blocks and the looping
@@ -312,7 +313,7 @@ additional portfolio notes:
 - remember when i had the goal to build a compiler and work that into these projects
 - study leetcode arrays, for example cityscape problem; model data structures and algos concepts
 - use parallel visual and verbal problem solving
-- research ISO/ISEE/x86, etc. standards, protocols, etc. to see if/how they apply to these projects (esp new standards and CUDA Math API standards, etc.)
+- research ISO/ISEE/x86, etc. standards, protocols, etc. to see if/how they apply to these projects (esp new standards and CUDA Math API standards, etc.) (#todo for projects 2/3)
 
 #### apr 4, 2024 next steps:
 - use this doc to do project one code analysis
