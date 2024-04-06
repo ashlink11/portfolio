@@ -75,6 +75,7 @@ next steps: (april 5, 2024)
         - something fun?
         - something interactive?
       - extremely short and/or longer embedded youtube videos demoing projects/learnings
+        - this could demo all the different meta-map ideas like math, linguistics, philosophy, business, etc. to show both generalization and specialization and evolution of last decade of programming 
       - person project concept page with LLM/linguistics/identity language personal development 
     - think about what content will be on & links to:
       - LinkedIn (posts?)
