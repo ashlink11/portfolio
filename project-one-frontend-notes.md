@@ -1,6 +1,6 @@
 # project one frontend notes
 #### date created: april 5, 2024
-
+#### tags: #todo #key
 
 # high-level
 
@@ -63,10 +63,31 @@ next steps: (april 5, 2024)
     - where does the overall projects evolution summary go?
     - visuals:
       - dynamic and static elements
-      - minimal maps/charts
+      - which minimal maps/charts? and how to make them minimal?
+        - options other than lucidchart for SWA diagrams
+          - [top 8 SWA diagramming tools medium article](https://icepanel.medium.com/top-8-diagramming-tools-for-software-architecture-2fc61d095b93): "Software architecture tools can be categorized into three groups, modelling tools, diagrams as code and diagramming tools."
+            - Excalidraw (most aesthetic)
+            - Gliffy for UML & ERD diagrams - use idea but not aesthetic design
+            - Cloudskew - idea of using tech logos for a tech stack diagram, etc.
+            - Trello for Kanban to demo Agile/Scrum
+              - high-level: portfolio project
+              - mid-level: releases for corresponding backend/frontend milestones
+                - github PRs 
+              - low-level: sprints (good sprint lengths - 2 weeks)
+              - agile charter
+              - PBIs
+              - scrum events
+                - track daily scrums vs github commit messages
+                - how much of all this is sidebar topics? #key
+              - Miro instead of Excalidram and Gliffy
+              - essentially Miro vs Lucidchart
+          - high/mid/low levels and can i combine them somehow?
+          - include my github contributions annual charts somehow
     - any more pages?
       - a super minimal contact page last unless that's bad UX
       - an almost purely map/chart page?
+      - way to demo 'database'/data for the site
+      - demo frontend knowledge including PWA & tech stacks & react 'standard library', etc.
       - an evo/map of ML page?
       - a page showing the evolution of my jobs and 2 open-source projects?
         - link to best w3f code/evaluations 
