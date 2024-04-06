@@ -56,10 +56,13 @@ next steps: (april 5, 2024)
       - logos of all technologies i know
       - photo
       - bio (how many sections? 1?) what's the overlap btw this, resume, and linkedin, etc.?
-        - selected hobbies? 
+        - selected hobbies? add the 'why'/mission/biz vision/career goals type stuff
     - project one
+      - most minimal 
     - project two
+      - mid minimal
     - project three
+      - not that minimal
     - where does the overall projects evolution summary go?
     - visuals:
       - dynamic and static elements
@@ -86,9 +89,11 @@ next steps: (april 5, 2024)
     - any more pages?
       - a super minimal contact page last unless that's bad UX
       - an almost purely map/chart page?
-      - way to demo 'database'/data for the site
+      - way to demo 'database'/data for the site because this does demo fundamental backend dev/devops knowledge
+        - relate this to cache/registers/RAM/SSD memory (remember XOR has memory #todo)
+        - relate this to cloud storage and datacenter memory and GCP/Azure/AWS/Cloudflare edge, etc. 
       - demo frontend knowledge including PWA & tech stacks & react 'standard library', etc.
-      - an evo/map of ML page?
+      - an evo/map of ML page? demo what AI i used #key and how it relates to MLIR/CUDA hardware/software concepts #key
       - a page showing the evolution of my jobs and 2 open-source projects?
         - link to best w3f code/evaluations 
       - a page showing how i built this portfolio site? (or on github repo readme?)
@@ -99,20 +104,62 @@ next steps: (april 5, 2024)
         - this could demo all the different meta-map ideas like math, linguistics, philosophy, business, etc. to show both generalization and specialization and evolution of last decade of programming 
       - person project concept page with LLM/linguistics/identity language personal development 
     - think about what content will be on & links to:
-      - LinkedIn (posts?)
+      - linkedin (posts?)
+      - trello
       - resume ((but might be different for each/some applications))
       - ((don't link cover letters of course))
       - put new email on there (Ashley Grevelink - ashley.grevelink@gmail.com)
       - twitter
-      - medium
+      - youtube (& tiktok for shorts) as long as theyre 100% career-focused & minimal yet dont take away from career goals. e.g. make a 'final' video that summarizes all the rest in a playlist that's 'completed' (would need adobe premiere pro)
+      - medium (posts?)
       - github & repo(s) READMEs/selected code (good for project code)
 
 
 # low-level
 
+### progress april 6, 2024:
 
+ - agile meta
+ - make initial trello/agile notes during these:
+   - mid-level frontend & backend sketches/maps
+   - write absolute minimal verbal if applicable to realize if core concepts translate visual/verbal
+   - repeat visual/verbal for high-level
+   - repeat visual/verbal for low-level
+ - then agile top-down all the way down
+   - agile charter
+   - project planning (product owner role)
+     - non-technical stakeholders as customers #key
+     - KPIs & metric tracking #key
+   - release planning
+   - sprint planning
+     - user stories to PBIs #key (which are multiple roles?)
+     - planning poker
+     - velocity estimation & burn-up chart
+     - customer success role too
+   - trello 
+   - daily scrum
+   - look ahead to:
+     - sprint review
+     - sprint retro
+       - burn-down chart and measure velocity (#key to resume/cover letter quantifiables) with words & lines of codee and hours and deep flows and timeboxed pomos on routine 
+     - backlog refinement
+       - tester role 
+     - next sprint
+ - choose core concepts from mid-level
+   - do this by:
+     - initial map based on mid-level notes
+       - (blue) identify fundamental concepts highest in the hierarchy
+       - (purple) identify essential concepts to demo for parallel generalization/specialization
+       - identify which concepts should be visual
+       - identiy which concepts should 
+     - move up one level of abstraction
+     - move down one level of abstraction
+     - execute (the sprint)
+     - repeat
+ - sketch out to realize if core concepts translate visually
+ - double check verbal again and compare to visual 
 
-
+### next steps:
 
 
 
