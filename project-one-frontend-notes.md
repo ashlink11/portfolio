@@ -26,7 +26,7 @@ notes:
       - code carousel
     - embedded jupyter notebook
    
-next steps:
+next steps: (april 5, 2024)
 - keep working on this^
 - start with [this video](https://www.youtube.com/watch?v=br2d_ha7alw)
   - from March 25, 2024 by VP of Product
@@ -39,4 +39,61 @@ next steps:
 
 # mid-level
 
+### progress april 6, 2024:
+- v0 can accept either images or prompt
+- so next step is to design the UI on paper
+  - pages/elements:
+    - home (traditional portfolio page)
+      - logos of all technologies i know
+      - photo
+      - bio (how many sections? 1?) what's the diff btw this and resume? 
+    - project one
+    - project two
+    - project three
+    - where does the overall project evolution summary go?
+    - any more pages?
+    - links to LinkedIn, resume, put email on there, etc.
+  - consider:
+    - colors
+    - font size
+    - mobile-first
+    - laptop
+    - embedded jupyter notebook
+
 # low-level
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
