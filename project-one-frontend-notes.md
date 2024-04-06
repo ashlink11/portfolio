@@ -42,23 +42,49 @@ next steps: (april 5, 2024)
 ### progress april 6, 2024:
 - v0 can accept either images or prompt
 - so next step is to design the UI on paper
+  - consider:
+    - colors
+    - font & font size
+    - mobile-first
+    - laptop display
+    - embedded jupyter notebook
+    - page speed
+    - whichever PWA ideals i met with this site
   - pages/elements:
     - home (traditional portfolio page)
+      - name
       - logos of all technologies i know
       - photo
-      - bio (how many sections? 1?) what's the diff btw this and resume? 
+      - bio (how many sections? 1?) what's the overlap btw this, resume, and linkedin, etc.?
+        - selected hobbies? 
     - project one
     - project two
     - project three
-    - where does the overall project evolution summary go?
+    - where does the overall projects evolution summary go?
+    - visuals:
+      - dynamic and static elements
+      - minimal maps/charts
     - any more pages?
-    - links to LinkedIn, resume, put email on there, etc.
-  - consider:
-    - colors
-    - font size
-    - mobile-first
-    - laptop
-    - embedded jupyter notebook
+      - a super minimal contact page last unless that's bad UX
+      - an almost purely map/chart page?
+      - an evo/map of ML page?
+      - a page showing the evolution of my jobs and 2 open-source projects?
+        - link to best w3f code/evaluations 
+      - a page showing how i built this portfolio site? (or on github repo readme?)
+      - a page/dropdown menu for a demo of any other key technologies i know?
+        - something fun?
+        - something interactive?
+      - extremely short and/or longer embedded youtube videos demoing projects/learnings
+      - person project concept page with LLM/linguistics/identity language personal development 
+    - think about what content will be on & links to:
+      - LinkedIn (posts?)
+      - resume ((but might be different for each/some applications))
+      - ((don't link cover letters of course))
+      - put new email on there (Ashley Grevelink - ashley.grevelink@gmail.com)
+      - twitter
+      - medium
+      - github & repo(s) READMEs/selected code (good for project code)
+
 
 # low-level
 
