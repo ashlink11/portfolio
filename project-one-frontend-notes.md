@@ -247,10 +247,19 @@ portfolio content plan for text/visual:
     - non-technical translation:
   - key lesson about system fundamental(s) learned
 
+what to do with extra notes, if anything:
+- repo READMEs
+- possible code comments too
 
+proofreading:
+- cross-check the three projects with these: (etc.)
+  - https://en.wikipedia.org/wiki/LLVM
+    - ^interesting note: i learned CUDA has an LLVM frontend, which i didnt know was possible because i didnt think CUDA was a language #todo 
+  - https://en.wikipedia.org/wiki/MLIR_(software)
+  - https://en.wikipedia.org/wiki/CUDA 
 
-
-
+interview prep:
+- review the project specifics so i have examples of $PATH, /opt, /llvm/lib, a header file, bash commands i needed, etc.
 
 
 
