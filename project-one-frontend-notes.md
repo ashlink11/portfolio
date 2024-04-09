@@ -208,7 +208,44 @@ next steps: (april 5, 2024)
   - go back to the project one code and do the write up and diagrams
   - etc., repeat, iterate :) 
 
+# progress tues apr 9
 
+portfolio content plan for text/visual:
+- for each project:
+  - quick overview and into the project
+  - biggest challenge
+  - how i overcame it
+  - key lesson about system fundamental(s) learned
+- for bio:
+  - no bio really, just the logos of tech i know categorized into their parts of the stack like my old portfolio website 
+
+- so for project one: (rough notes)
+  - quick overview and into the project
+    - technical way to say it: 
+      - llvm is compiler/tools to transform programming langs --> ISAs.
+      - main cool thing is LLVM IR (which is essentially the vm in llvm. the asm.)
+      - so i wanted to clone their open source github repository.
+      - then create a small project & run llvm on my machine.
+    - non-technical translation: (draft 1)
+      - LLVM is a historically important collection of open-source utility code for over two-decades that's used by Apple, Windows, and Linux.
+      - the acronym for LLVM became confusing so they dropped it more than a decade ago, but essentially LLVM is a compiler.
+      - a compiler is software that translates programming languages down to machine code.
+      - in other words, it's part of the technology stack that translates software to hardware.
+      - that means Apple, Windows, and Linux use LLVM to help translate software programs into zeroes and ones. 
+      - since LLVM is open source, i downloaded it from their public code library so i could try to write and run simple projects on my machine.
+  - biggest challenge
+    - technical lang:
+      - super complex (3 months) to understand the llvm source code and cmake config and didnt know if the c++ was correct either.
+    - non-technical translation:
+      - over the decades, LLVM has become a really large code base, so it actually took me over three months of working on this in my free time to get it running.  
+  - how i overcame it
+    - technical lang:
+      - i had to learn:
+        - my file system way more including /opt, $PATH, bash in general, and where things i installed with bash go, and all the different versions of the lang compilers, etc.
+        - overall llvm infra high-level
+        - study the llvm source code, so the dir structure and some header files in llvm/lib specifically 
+    - non-technical translation:
+  - key lesson about system fundamental(s) learned
 
 
 
