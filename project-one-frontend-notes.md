@@ -159,9 +159,54 @@ next steps: (april 5, 2024)
  - sketch out to realize if core concepts translate visually
  - double check verbal again and compare to visual 
 
+### progress mon apr 8:
+- paper notes on levels of abstraction diagrams and maps
+- gathered the best ontological classifications ive collected/made throughout the years on 2 pieces of paper
+- e.g.: (this is not the maps/diagrams of them)
+  - philosophy:
+    - thesis --> antithesis --> thesis (hegelian dialectic)
+    - what is there, what can you know, what should we do, what's a beautiful life
+  - math:
+    - pure --> applied
+    - discrete math:
+      - formal logic:
+        - premises --> argument --> proof (as a formal means to transfer/prove truth)
+        - truth: axioms --> rules --> theorems --> laws
+    - non-discrete/informal 'truth': statistics and empiricism (science)
+  - linguistics:
+    - it's all syntax and semantics
+    - it's all subject verb object (and sometimes adjective, etc.)
+  - computing:
+    - it's all languages and systems
+    - it's all objects and their properties and relationships (functions)
+    - it's all blueprints and copies
+    - it's all doing (operating/execution) and keeping track of the details (memory & state)
+    - it's all versioning --> ...
+  - modeling/systems: 
+    - low-level
+    - mid-level
+    - high-level
+    - meta-level 
+    - (new emergent properties level of abstraction)
+  - did a lot of writing/story/character progression/maps/diagrams too because it helps me plan the keywords/themes for a quick bio as well as the minimal text for visuals for the three projects.
+  - that's all enough to help me move forward with the portfolio content design, which will help me create the project one analysis/page design, so then i can make the frontend asap that ui in mind.
+
+- ^i should clean this all up later 
+
 ### next steps:
-
-
+- draw some quick sketches of the four pages of the portfolio on paper with general content boxe
+- redraw the project one page high-level
+- then mid-level
+- then low-level
+- then use v0.dev starter tools
+- then make a new vercel repo
+  - find a vercel template that i can use with GitHub Pages
+  - otherwise i'll have to hack together a frontend build toolchain to get it hosted
+- once the portfolio website is up then:
+  - set up the dev env a bit better with hot reloading
+  - try super fast version with the v0.dev components
+  - go back to the project one code and do the write up and diagrams
+  - etc., repeat, iterate :) 
 
 
 
