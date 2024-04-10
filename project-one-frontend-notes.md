@@ -261,7 +261,43 @@ proofreading:
 interview prep:
 - review the project specifics so i have examples of $PATH, /opt, /llvm/lib, a header file, bash commands i needed, etc.
 
+# progress wed apr 10
+- for projects two/three get into pointers & other c++ fundamentals #todo #key
+- add in the challenge section that i was just trying to get the .exe so i tried the cmake desktop GUI app too but \bin was empty both with that and cmake . in the terminal #key . needed to get something at atomic as possible running as a first step so thats what p1 turned into bc llvm is outdated anyway with lattner working on MLIR/mojo/CUDA/SIMT now
+- for how i overcame it: used official docs of llvm and cmake bc running llvm is too commplicated and individual and ever-changing that there cannot be widely-accurate tutorials on the web
+- so the cmake and llvm docs gave some fundamentals
+- but actually i used chat gpt 3.5 until it kept repeating itself and then gemini ended up helping me with the final cmake config. ai as a learning tool is an important skill for devs these days, especilly for boilerplate and learning to read code (but not write). the code i really want to know how to write is the mojo for mlir and the c++ for cuda. agile "the primary measure of progress is working code". ai doesnt give all the answers; you need the right questions and still need a huge understanding bc these systems are so complicated
+- ^ simplify that obv
+- p1 fundas learned:
+  - 1 basic block
+  - the main low-level focus: project source code, llvm libs/headers, and cmake config
+  - 3 bash commands total. configure, build, run #todo what's the diff btw config and run? (object files than bitcode i think)
+  - .exe is in bitcode
+  - then 1 more command to see the LLVM IR output which was actually super unexpectedly simple, short, and easy to read
+  - optimization and transformation of code is just for complex loops #todo for p2/p3 i wonder if its possible with concurrency?
+  - so in summary, we had cpp, cmake, object files, bitcode then ll asm file formats
+  - so we turn things from:
+    - cpp objects - programmers create the objects conceptually with code
+    - llvm ir objects which are target-independent ("virtual machine")
+    - llvm assembly asm is architecture-dependent x86, ARM, PowerPC, etc.
+    - llvm object file is _machine_-dependent i.e. specific binary for the ISA of the machine
+- understand this more: #todo
+  - llvm ir is the additional target-independet layer of abstraction that united the computing industry to x86 in the 2000s
+  - "LLVM IR allows compilation of code for various architectures without rewriting the entire compiler for each target."
+  - "LLVM IR didn't eliminate the need for target-specific backends, but it significantly reduced the effort required to support new architectures. Compilers could leverage existing LLVM infrastructure and optimizations, focusing on generating efficient machine code from LLVM IR for the new target ISA."
+  - "Target-Specific Backends as LLVM Components: These backends are essentially compiler plugins that reside within the LLVM framework. They are written using LLVM APIs and leverage LLVM functionalities to translate LLVM IR into target-specific machine code."
+- bring it back to the lexer/parser/ast level
+- discuss the os/compiler level too
 
+### next steps:
+- understand the compiler frontend/backend and how llvm fits in and if my machine is using a target-specific backend or llvm completely to run the project or a bit of both?
+- simplify the p1 fundas learned
+- write draft 2 p1 text content
+- then do draft 1 p1 visuals/maps/diagrams
+
+#### future ideas:
+- pretty soon make a [frontend color palette](https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors)
+- would be interesting to make a checklist of mental models/heuristics for programming, systems design, and debugging, etc. like charlie munger 80 models #todo
 
 
 
