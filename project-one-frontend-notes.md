@@ -299,6 +299,75 @@ interview prep:
 - pretty soon make a [frontend color palette](https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors)
 - would be interesting to make a checklist of mental models/heuristics for programming, systems design, and debugging, etc. like charlie munger 80 models #todo
 
+## progress th apr 11: (p1 text content draft 2)
+
+##### quick overview & into the project
+
+llvm is open-source software used for over two decades by Apple, Microsoft, and Linux for a major and crucial part of compiling software/code into hardware instructions.
+
+llvm means "low-level virtual machine", but the foundation dropped the acronym more than a decade ago because it had become inaccurate/confusing.
+
+i've been studying compilers for some years, so i cloned their public open-source code library to write and run llvm projects on my machine.
+
+
+##### biggest challenge
+
+llvm has become a huge codebase over the years due to algorithmic optimizations, security, and maintaining compatibility, etc.
+
+a couple years ago, i had ran one library of software on this level of complexity, which had taken about two months of work.
+
+this time, i had to rewrite, reconfigure, and study for three months (jan 1 - mar 31, 2024) before i was able to generate an executable binary that would run successfully on my machine.
+
+
+##### how i overcame it
+
+i overcame that challenge by concurrently executing on the low-level and studying on the high-level when necessary.
+
+most of the effort was retrying over and over to generate a build with C++, CMake, and LLVM where each error code was generally a step of progress. sidenote: C++ is probably the most popular language with which LLVM is used and CMake is project build/configuration software.
+
+in between, i studied the high-level llvm infrastructure and its source code directory layout, the order of execution of llvm filetypes (`.cpp` --> `.o` --> `.bc` --> `.ll` --> `.native`), as well as any additional theoretical compiler principles such as lexing, parsing, and linking.
+
+another huge low-level piece is that i had to study my machine's (macOS) file system (filesys to understand how & where language and tools software were/are installed. i did this mainly by navigating the terminal from the root (`/`), using `bash` commands, and also using the CMake desktop GUI application for a second method of configuration.
+
+finally, i used modern ML tools like ChatGPT 3.5 and Gemini for rapid feedback to increase productivity/velocity because, like the agile philosophy emphasizes, "working code is the primary measure of progress". i had to get a minimal-viable project running so i could attempt using more advanced algorthms and compiler features in projects two and three.
+
+##### tl;dr-type conclusion
+
+in the end, my program generated one basic block of LLVM Intermediate Representation (IR) bitcode, which was surprisingly simple and easy to read. this IR can then be translated into the assembly code (ASM) and instruction set architecture (ISA) of any compatible x86, ARM, PowerPC, etc. computer architecture which Apple, Microsoft and Linux use/run on. because the IR is a target-agnostic bitcode runtime layer, this yielded the original "virtual machine" in LLVM's "low-level virtual machine" acronym. 
+
+for me, the keys to the low-level were focusing on: the project & llvm source code, the llvm libraries & headers, and of course, the cmake config file.
+
+and my take on the keys to the high-level were the concepts of: compiler frontend vs. backend, compiler vs. programming language, and
+compiler vs. operating system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
