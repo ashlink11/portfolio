@@ -299,9 +299,9 @@ interview prep:
 - pretty soon make a [frontend color palette](https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors)
 - would be interesting to make a checklist of mental models/heuristics for programming, systems design, and debugging, etc. like charlie munger 80 models #todo
 
-## progress th apr 11: (p1 text content draft 2)
+# progress th apr 11: (p1 text content draft 2)
 
-##### quick overview & into the project
+## quick overview & into the project
 
 llvm is open-source software used for over two decades by Apple, Microsoft, and Linux for a major and crucial part of compiling software/code into hardware instructions.
 
@@ -310,7 +310,7 @@ llvm means "low-level virtual machine", but the foundation dropped the acronym m
 i've been studying compilers for some years, so i cloned their public open-source code library to write and run llvm projects on my machine.
 
 
-##### biggest challenge
+## biggest challenge
 
 llvm has become a huge codebase over the years due to algorithmic optimizations, security, and maintaining compatibility, etc.
 
@@ -319,7 +319,7 @@ a couple years ago, i had ran one library of software on this level of complexit
 this time, i had to rewrite, reconfigure, and study for three months (jan 1 - mar 31, 2024) before i was able to generate an executable binary that would run successfully on my machine.
 
 
-##### how i overcame it
+## how i overcame it
 
 i overcame that challenge by concurrently executing on the low-level and studying on the high-level when necessary.
 
@@ -331,7 +331,7 @@ another huge low-level piece is that i had to study my machine's (macOS) file sy
 
 finally, i used modern ML tools like ChatGPT 3.5 and Gemini for rapid feedback to increase productivity/velocity because, like the agile philosophy emphasizes, "working code is the primary measure of progress". i had to get a minimal-viable project running so i could attempt using more advanced algorthms and compiler features in projects two and three.
 
-##### tl;dr-type conclusion
+## tl;dr-type conclusion
 
 in the end, my program generated one basic block of LLVM Intermediate Representation (IR) bitcode, which was surprisingly simple and easy to read. this IR can then be translated into the assembly code (ASM) and instruction set architecture (ISA) of any compatible x86, ARM, PowerPC, etc. computer architecture which Apple, Microsoft and Linux use/run on. because the IR is a target-agnostic bitcode runtime layer, this yielded the original "virtual machine" in LLVM's "low-level virtual machine" acronym. 
 
