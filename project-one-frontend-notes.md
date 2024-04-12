@@ -256,7 +256,10 @@ proofreading:
   - https://en.wikipedia.org/wiki/LLVM
     - ^interesting note: i learned CUDA has an LLVM frontend, which i didnt know was possible because i didnt think CUDA was a language #todo 
   - https://en.wikipedia.org/wiki/MLIR_(software)
-  - https://en.wikipedia.org/wiki/CUDA 
+  - https://en.wikipedia.org/wiki/CUDA
+  - fireship LLVM video
+  - fireship c++ video
+  - etc.?
 
 interview prep:
 - review the project specifics so i have examples of $PATH, /opt, /llvm/lib, a header file, bash commands i needed, etc.
@@ -325,7 +328,7 @@ this time, i had to rewrite, reconfigure, and study for three months (jan 1 - ma
 
 i overcame that challenge by concurrently executing on the low-level and studying on the high-level when necessary.
 
-most of the effort was retrying over and over to generate a build with C++, CMake, and LLVM where each error code was generally a step of progress. (sidenote: CMake is build/configuration software for projects.)
+most of the effort was retrying over and over to generate a build with C++, CMake, and LLVM where investigating/debuggin each error code was generally a step of progress. (sidenote: CMake is build/configuration software for projects.)
 
 in between, i studied the high-level llvm infrastructure and its source code directory layout, the order of execution of llvm filetypes (`.cpp` --> `.o` --> `.bc` --> `.ll` --> `.native`), as well as any additional theoretical compiler principles such as lexing, parsing, and linking.
 
@@ -344,9 +347,18 @@ and my take on the keys to the high-level were the concepts of: compiler fronten
 compiler vs. operating system.
 
 
+# progress fri apr 12
 
+- notes:
+  - `.a` files are used for external libraries during linking (#todo: file formats of CUDA math APIs)
+  - watch fireship summary vids before projects two and three (#todo)
 
+done:
+- draft possible user interface formats for portfolio (see porfolio assets folder)
 
+- next: 
+  - draft possible component graph/charts/code snippets designs 
+  - choose the core ones
 
 
 
