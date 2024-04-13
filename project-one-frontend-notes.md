@@ -25,6 +25,8 @@ notes:
       - to change colors for teaching effect
       - code carousel
     - embedded jupyter notebook
+- design notes:
+  - i like the aptos font #key
    
 next steps: (april 5, 2024)
 - keep working on this^
@@ -308,11 +310,11 @@ interview prep:
 
 llvm is open-source software used for over two decades by Apple, Microsoft, and Linux for a major and crucial part of compiling software/code into hardware instructions.
 
-llvm means "low-level virtual machine", but the foundation dropped this acronym more than a decade ago because it had become inaccurate/confusing.
+llvm means "low-level virtual machine", but the foundation dropped this acronym more than a decade ago because it had become inaccurate/confusing. but at the end of this page i explain why it was originally so.
 
 now llvm is generally thought of as a compiler and set of compiler tools especially associated with the c/c++ language family via the clang compiler.
 
-i've been studying compilers for some years, so in january 2024, i cloned the llvm public open-source code library to my machine so i could to write and run llvm projects.
+i've been studying compilers for some years, so in january 2024, i cloned the llvm public open-source code library to my machine so i could to write and run llvm/c++ projects.
 
 
 ## biggest challenge
