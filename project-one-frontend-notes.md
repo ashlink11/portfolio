@@ -319,7 +319,7 @@ i've been studying compilers for some years, so in january 2024, i cloned the ll
 
 ## biggest challenge
 
-over the years, llvm has become a huge codebase due to factors such as algorithmic optimizations, cybersecurity, and maintaining compatibility, etc.
+over the years, llvm has become a huge codebase due to factors such as algorithmic optimizations, cybersecurity, and maintaining compatibility, etc. (also tools for more of the stack)
 
 but i did have experience running a similarly complex library of software on my machine a couple years ago, which had taken about two months of work.
 
@@ -362,16 +362,50 @@ done:
   - draft possible component graph/charts/code snippets designs 
   - choose the core ones
 
+# progress su apr 14:
 
+- project one visuals ideas:
+- viz 1 context and into project (draft 1 done)
+  - #keywords: llvm cpp oss lib github c clang apple msft linux compiler compiler tools cloned it to my machine write run llvm cpp 
+- viz 2 biggest challenge
+  - #keywords:
+    - 2 decades huge codebase
+      - show files increasing in complexity as features added
+        - more of the stack
+        - algorithmic optimizations
+        - cybersecurity
+        - maintaining compatibility
+      - ran rust polkadot runtime p2p blockchain as w3f technical grant evaluator switz-based job 2 years ago (visual resume #todo interesting?) complex tech running on my computer show its tech stack down to the palette runtime w its componentsl two months
+      -  timeline jan 1 - mar 31 loops: study bugs, rewrite, reconfigure ::: .exe binary on my machine
+- viz 3 how i overcame it
+  - #keywords w-level and high-level split viz
+  - cpp cmake llvm stack infra w quick descriptions
+  - order of exe cpp o bc ll native
+  - lex parse link
+  - filsys langs and tools installed, root bash, cmake gui app
+  - chatgpt 3.5 gemini agile mvp velocity productivity (econ)
+- viz 4 tldr conclusion
+  - #keywords
+  - one basic block llvm ir bitcode simple easy
+  - ASM ISA x86 ARM PowerPC
+  - apple msft linux
+  - vm in llvm? doubt ill include that. unless somewhere in the stack as a lightbulb sidenote i guess. thats not minimal viz tho.
+  - low level:
+    - project source code
+    - llvm libs headers
+    - cmake config 
+  - high-level
+    -  compiler frontend vs. backend
+    -  compiler vs. programming language
+    -  compiler vs. operating system.
 
-
-
-
-
-
-
-
-
+- next steps:
+  - see if i can simplify those longform p1 viz ideas above for next time
+  - then i can draw super rough drafts for them
+  - then look overall at all 4 viz drafts
+  - then compare with p1 text draft 3
+  - then can make 4 better viz drafts for p1 
+  
 
 
 
