@@ -6,6 +6,13 @@
 - (in progress) [project one summary notes](./project-one-summary-notes.md)
 - (in progress) [project one frontend notes](./project-one-frontend-notes.md)
 
+## project two:
+- (in progress) [project two plan notes](./project-two-plan-notes.md)
+
+## project three:
+- (in progress) [project three plan notes](./project-three-plan-notes.md)
+
+
 ## overall strategy:
 
 - meta-level
