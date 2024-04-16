@@ -404,7 +404,8 @@ done:
   - then i can draw super rough drafts for them
   - then look overall at all 4 viz drafts
   - then compare with p1 text draft 3
-  - then can make 4 better viz drafts for p1 
+  - then can make 4 better viz drafts for p1
+  - see if i can make handdrawn viz look good by scanning & color inverting them for dark mode. dont want them to look too photo-edited though. otherwise, digital art would take too long honestly
   
 
 
