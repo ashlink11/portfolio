@@ -407,9 +407,16 @@ done:
   - then can make 4 better viz drafts for p1
   - see if i can make handdrawn viz look good by scanning & color inverting them for dark mode. dont want them to look too photo-edited though. otherwise, digital art would take too long honestly
   
+# progress april 17, 2024
 
+done:
+- viz for basic tech stacks for all projects (in assets)
+- viz for all p1 components categorized by four content sections
 
-
+next steps: (p1)
+- see if i can simplify the p1 component viz ideas because they're way too much.
+- i had a thought to include more visualizations than the four main viz but idk how that could work.
+- so, next step is p1 viz components draft two
 
 
 
