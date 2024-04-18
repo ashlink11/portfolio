@@ -418,6 +418,22 @@ next steps: (p1)
 - i had a thought to include more visualizations than the four main viz but idk how that could work.
 - so, next step is p1 viz components draft two
 
+# progress april 18, 2024
+
+- i realized essentially the p1 viz components ideas are meta/high/mid/low levels
+- i dont want infra diagrams to be redundant though:
+  - llvm on the web (gh)
+  - llvm dir tree / project source tree
+  - all llvm infra/tooling diagram
+  - all llvm stack (and meta stack that its in)
+  - llvm process via file extension
+  - all actual key code files (3)
+  - key lessons:
+    - lex parse link
+    - backend vs frontend
+    - vs language
+    - vs operating system
+- i was able to write about all that ^ simply though so maybe i can make it work
 
 
 
