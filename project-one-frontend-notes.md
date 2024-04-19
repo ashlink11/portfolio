@@ -435,7 +435,9 @@ next steps: (p1)
     - vs operating system
 - i was able to write about all that ^ simply though so maybe i can make it work
 
+## progress april 19, 2024
 
+- tried canva so i could use their icons to get this done quickly.
 
 
 
