@@ -331,7 +331,9 @@ additional portfolio notes:
 #### progress apr 5, 2024:
 - new project one summary readme with high/mid/low levels structure
 
-
+#### progress apr 21, 2024:
+- this week is gonna be a chill portfolio week because of the school term and i'm ahead of schedule on my portfolio goals
+- a bunch of my green checks from 2024 disappeared because i took an old work email off my account and some of my commits were via that email but i can update the logs to get those back and plan to soon
 
 
 
