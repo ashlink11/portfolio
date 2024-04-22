@@ -439,6 +439,35 @@ next steps: (p1)
 
 - tried canva so i could use their icons to get this done quickly.
 
+## progress april 22, 2024
+
+- i've used canva before and decided i'll use canva for this. it'll be way better visually.
+- i'll still draft with drawing
+
+next steps:
+- keep browsing canva and choose which icon collections i like the look of
+- i doubt i'll use logos even for the open source software, ill just use names in the same font
+- i'll use open source tech logos on the home page of my portfolio though for skills i know
+- elements i might need: (draft one)
+  - business buildings
+  - server cloud
+  - library of code
+  - laptop
+  - code snippet
+  - terminal
+  - file
+  - compiling/building/generating file
+  - running/executing file
+  - stack of files
+  - arrows & lines
+  - perspective magnifying glass type icon optional
+  - more complex ones:
+    - make tokenizing, mapping, and translating via dictionaries look cool
+    - visuals for english, code, bytecode, ISA, and binary 
+    - chip hardware components (vna)
+
+
+
 
 
 
