@@ -466,7 +466,12 @@ next steps:
     - visuals for english, code, bytecode, ISA, and binary 
     - chip hardware components (vna)
 
+# progress april 23, 2024
 
+- looked through a bunch of canva icons
+- i found a bunch i like but couldn't find any collections by one artist of the same style
+- i think canva might not be a good choice because of that.
+- i'll probably draw and scan and flip to dark mode to see if that'll work, otherwise i have too many different icon types i need to find a cohesive collection. i dont wanna spend too much time on this. but it has to look nice.
 
 
 
