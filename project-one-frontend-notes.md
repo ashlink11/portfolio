@@ -473,8 +473,22 @@ next steps:
 - i think canva might not be a good choice because of that.
 - i'll probably draw and scan and flip to dark mode to see if that'll work, otherwise i have too many different icon types i need to find a cohesive collection. i dont wanna spend too much time on this. but it has to look nice.
 
+# progress april 24, 2024
 
-
+- color palette day
+- decided on a custom color palette which is like london blue and light blue-grey and light/dark copper. i found this afterwards and this is kinda similar but this one is more green: https://images.squarespace-cdn.com/content/v1/638773c92dfb4812d5f5ff28/1669824525700-Q0277UJUN2T2ZDMOH2RX/image-asset.png
+  - #adc6c7 light blue-grey
+  - #3b738a london blue (primary color)
+  - #e5a984 light copper
+  - #ab7067 dark copper
+- planning to use it really sparingly so it's not too gaudy. it's definitely new colors for me. 
+- thankfully i could easily change it
+- reviewed the material design dark theme colors and concepts https://m2.material.io/design/color/dark-theme.html#properties
+- used this https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors to generate a mathematical palette but didnt like it as much as teh custom. thankfully the math was really close to the custom though just inputting the primary. i do like the primary 900 though.
+- i can overlay the primary color with the dark theme surface when finalizing the website and make the different overlay transparencies if this palette works out
+- tested white, 4 different greys and the light blue-grey as font & link colors on the dark theme surface and primary 900 and some look good so i just want to see it large scale on the site
+- ive got some light grays and dark grays
+- think i might use open-source tech/language logos for the skills section but maybe make them black/white and take the color out. not sure about that though.
 
 
 
