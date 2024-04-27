@@ -611,6 +611,10 @@ jobs:
 
 current build process: https://github.com/ashlink11/ashlink11/actions/runs/8836633679
 
+## progress sat apr 27, 2024
+
+- current build just needs an `.md` file in a repo
+- i did notice there was a 1-2 day delay on the build update which was really weird
 
 
 
