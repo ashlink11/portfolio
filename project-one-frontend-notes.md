@@ -620,7 +620,13 @@ current build process: https://github.com/ashlink11/ashlink11/actions/runs/88366
 
 - found this. next guide for the build: https://nextjs.org/learn-pages-router/basics/deploying-nextjs-app/github
 
+## progress mon apr 29, 2024
 
+- looks like i might need to try a few deployments
+- `npx create-next-app@latest nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/main/basics/basics-final"` from https://nextjs.org/learn-pages-router/basics/deploying-nextjs-app/setup where i would do the build on vercel.com
+- try v0.dev --> "React code based on shadcn/ui and Tailwind CSS."
+- look for boilerplate on next.js https://vercel.com/templates/next.js
+- read through this: https://vercel.com/docs/deployments/git/vercel-for-github
 
 
 
