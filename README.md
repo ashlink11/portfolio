@@ -335,7 +335,17 @@ additional portfolio notes:
 - this week is gonna be a chill portfolio week because of the school term and i'm ahead of schedule on my portfolio goals
 - a bunch of my green checks from 2024 disappeared because i took an old work email off my account and some of my commits were via that email but i can update the logs to get those back and plan to soon
 
-
+#### progress may 1, 2024:
+- some long term extra ideas:
+  - would be cool to compare low-level functionality and multithreading/concurrency in c++, c, zig, go, rust, mojo
+- leetcode: c++, python, java, javascript. trees (ast), graphs.
+- open-source contribution: llvm, mlir, mojo, pytorch, tensorflow
+- extra free online courses:
+  - edx stanford compilers
+  - coursera stanford machine learning 3x courses (andrew ng courses)
+  - coursera princeton computer architecture
+  - some embedded systems/digital circuits
+  - advanced compilers if i could find one  
 
 
 
