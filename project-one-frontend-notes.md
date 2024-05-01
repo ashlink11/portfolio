@@ -629,6 +629,58 @@ current build process: https://github.com/ashlink11/ashlink11/actions/runs/88366
 - read through this: https://vercel.com/docs/deployments/git/vercel-for-github
 
 
+## progress tues apr 30, 2024
+
+- actually the links from the last couple days arents for github pages
+- i should read through the nextjs gh actions yaml file
+
+- gh actions yt vid https://www.youtube.com/watch?v=URmeTqglS58
+- devops journey gh actions vid https://www.youtube.com/watch?v=mFFXuXjVgkU
+
+#### gh actions:
+- workflow automation tool
+- build, test, deploy
+- workflow yaml file: define workflows with YAML for each step 
+- can add scripts
+- keywords: on, jobs, steps, uses, with, etc. (dockerfiles are FROM, RUN, COPY, EXPOSE, CMD, etc.)
+- essentially configures the website environment but doesnt necessarily use an Azure container
+- events, jobs, runners, steps, actions
+- event: trigger for a workflow (e.g. push to main) `on: push`
+  - then runs all the jobs in the workflow
+- jobs have a name, e.g. run the portfolio-build job
+- runner: container env that will run the code (gh runs for you by default hosted on gh)
+  - microsoft windows, linux ubuntu-latest, and mac os
+  - checkout code and then run the job
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
