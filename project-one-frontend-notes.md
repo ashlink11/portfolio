@@ -634,8 +634,9 @@ current build process: https://github.com/ashlink11/ashlink11/actions/runs/88366
 - actually the links from the last couple days arents for github pages
 - i should read through the nextjs gh actions yaml file
 
-- gh actions yt vid https://www.youtube.com/watch?v=URmeTqglS58
-- devops journey gh actions vid https://www.youtube.com/watch?v=mFFXuXjVgkU
+- gh actions yt vid https://www.youtube.com/watch?v=URmeTqglS58 
+- devops journey gh actions vid https://www.youtube.com/watch?v=mFFXuXjVgkU (at 2:51)
+- beyond fireship gh actions vid https://www.youtube.com/watch?v=yfBtjLxn_6k
 
 #### gh actions:
 - workflow automation tool
