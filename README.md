@@ -338,6 +338,11 @@ additional portfolio notes:
 #### progress may 1, 2024:
 - some long term extra ideas:
   - would be cool to compare low-level functionality and multithreading/concurrency in c++, c, zig, go, rust, mojo
+  - also implement a graph algo in each
+  - compare common/rare brugs
+  - compare standard library overviews
+  - compare how they handle i/o networking and IEEE protocols, Web APIs etc
+  - compare their ideals & programming principles in general
 - leetcode: c++, python, java, javascript. trees (ast), graphs.
 - open-source contribution: llvm, mlir, mojo, pytorch, tensorflow
 - extra free online courses:
