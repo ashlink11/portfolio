@@ -634,8 +634,8 @@ current build process: https://github.com/ashlink11/ashlink11/actions/runs/88366
 - actually the links from the last couple days arents for github pages
 - i should read through the nextjs gh actions yaml file
 
-- gh actions yt vid https://www.youtube.com/watch?v=URmeTqglS58 
-- devops journey gh actions vid https://www.youtube.com/watch?v=mFFXuXjVgkU (at 2:51)
+- gh actions yt vid https://www.youtube.com/watch?v=URmeTqglS58 (watched)
+- devops journey gh actions vid https://www.youtube.com/watch?v=mFFXuXjVgkU (watched) 
 - beyond fireship gh actions vid https://www.youtube.com/watch?v=yfBtjLxn_6k
 
 #### gh actions:
@@ -652,7 +652,10 @@ current build process: https://github.com/ashlink11/ashlink11/actions/runs/88366
 - runner: container env that will run the code (gh runs for you by default hosted on gh)
   - microsoft windows, linux ubuntu-latest, and mac os
   - checkout code and then run the job
-  
+- `repo/.github/worflows/workflow1.yml` dir struct
+- use the workflow marketplace for boilerplate
+
+
 
 
 
