@@ -655,6 +655,16 @@ current build process: https://github.com/ashlink11/ashlink11/actions/runs/88366
 - `repo/.github/worflows/workflow1.yml` dir struct
 - use the workflow marketplace for boilerplate
 
+## progress sat may 4
+notes:
+- so vercel.com isnt hosting it
+- i dont see it cloning any code other than node, cache, npm build, and github hosting
+- they link this doc in the yml file https://nextjs.org/docs/ > api reference
+
+next steps:
+- i think best idea is to try to run it next and see if i get any error messages
+- i do need to figure out what type of files it expects in the repo, so might need to look at the next.js vercel templates first
+
 
 
 
