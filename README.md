@@ -352,7 +352,14 @@ additional portfolio notes:
   - some embedded systems/digital circuits
   - advanced compilers if i could find one  
 
+#### progress may 5, 2024:
+- may plan: 25 minutes work on this per day
+- june plan: 55 minutes work on this per day
+- july 1: apply to first round of jobs
 
+next steps:
+- plan next two months in detail week by week
+- get done what i need to get done this week
 
 
 
