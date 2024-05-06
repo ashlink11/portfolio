@@ -362,6 +362,33 @@ next steps:
 - get done what i need to get done this week
 
 
+#### progress may 6, 2024
+
+detailed may-june github/website plan:
+(format: month.week, e.g. first week of may is 5.1)
+
+5.1: site backend - finish the build
+5.2: site frontend - mvp: bio (home) & p1 pages (remember to use canva)
+5.3: site frontend - draft tw p1 page
+5.4: project two backend - code
+6.1: project two backend - code
+6.2: project two backend - code
+6.3: site frontend - project two
+6.4: site frontend - bio page with new photo
+
+detailed 5.1 (this week) plan:
+mon: today. planning
+tues: create proper dir structure in existing repo. on a diff branch is good practice
+wed: if doesnt work, might have to rename and clone and rename
+thurs: if i get it, review react
+fri: if i get it, review shadcn & tailwind
+sat: website with just a React/shadcn/tailwind page live on ashlink11.github.io (nothing on it yet)
+
+
+
+
+
+
 
 
 
