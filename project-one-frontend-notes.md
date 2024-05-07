@@ -665,6 +665,9 @@ next steps:
 - i think best idea is to try to run it next and see if i get any error messages
 - i do need to figure out what type of files it expects in the repo, so might need to look at the next.js vercel templates first
 
+## progress tues may 7
+- got the nextjs yml file in my ashlink11 repo
+- monitoring the build
 
 
 
