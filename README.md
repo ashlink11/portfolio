@@ -368,6 +368,8 @@ next steps:
 detailed may-june github/website plan:
 (format: month.week, e.g. first week of may is 5.1)
 
+###### meta-level
+
 5.1: site backend - finish the build
 5.2: site frontend - mvp: bio (home) & p1 pages (remember to use canva)
 5.3: site frontend - draft tw p1 page
@@ -377,13 +379,54 @@ detailed may-june github/website plan:
 6.3: site frontend - project two
 6.4: site frontend - bio page with new photo
 
+###### high-level
+
+tbd (more detailed week by week - split into 7 days and long seshs on weekends)
+
+###### mid-level
+
 detailed 5.1 (this week) plan:
 mon: today. planning
-tues: create proper dir structure in existing repo. on a diff branch is good practice
-wed: if doesnt work, might have to rename and clone and rename
+tues: create proper dir structure in existing repo (done)
+wed: 
 thurs: if i get it, review react
 fri: if i get it, review shadcn & tailwind
 sat: website with just a React/shadcn/tailwind page live on ashlink11.github.io (nothing on it yet)
+
+###### low-level (use this for literally doing the work (.exe-level))
+
+detailed 5.1: (for the rest of the week) 
+- fri: (finish portfolio website build)
+  - clone ashlink11 repo to laptop 
+  - checkout new branch
+  - `--create-next-app` with flags
+    - https://nextjs.org/learn-pages-router/basics/create-nextjs-app/setup
+    - https://nextjs.org/docs/pages/api-reference/create-next-app
+    - https://v0.dev/ has to be compatible with react, shad-cn, tailwind so search their docs 
+  - push back to gh
+  - commit PR to main
+  - look at site and look at gh actions hosted terminal results
+  - if doesnt work, might have to duplicate repo w new name, go back a commit on main, and git pull so i dont lose commits
+  - then i can try diff ways and repeat till i get it
+- sat:
+  - debug yesterdays if i didnt get the build done
+  - or plan next week (5.2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
