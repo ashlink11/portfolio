@@ -669,26 +669,200 @@ next steps:
 - got the nextjs yml file in my ashlink11 repo
 - monitoring the build
 
+## progress fri may 10
+
+```
+node -v (need at least 18)
+
+v18.16.0
+```
+
+- npx, yarn, pnpm, or bun? try bun.
+- super interesting i can install bun with docker #key i could use that to demo backend dev skills (fullstack dev)
+
+```
+brew install oven-sh/bun/bun
+
+bun create next-app
+
+# TypeScript, ESLint, Tailwind CSS, App Router
+dependencies:
+- react
+- react-dom
+- next
+- typescript
+- @types/react
+- @types/node
+- @types/react-dom
+- tailwindcss
+- postcss
+- autoprefixer
+- eslint
+- eslint-config-next
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'next@14.2.3',
+npm WARN EBADENGINE   required: { node: '>=18.17.0' },
+npm WARN EBADENGINE   current: { node: 'v18.16.0', npm: '9.6.7' }
+npm WARN EBADENGINE }
 
 
+# new 
+npm i -g create-next-app
+
+# then moved files up a layer
+
+bun install
+
+bun install v1.1.7 (b0b7db5c)
+[4.81ms] migrated lockfile from package-lock.json
+
+ 14 packages installed [365.00ms]
+
+```
+
+- need updated node to update create-app
+- install via `.pkg` from node.js
+
+```
+This package has installed:
+	•	Node.js v22.1.0 to /usr/local/bin/node
+	•	npm v10.7.0 to /usr/local/bin/npm
+Make sure that /usr/local/bin is in your $PATH.
+```
+
+- that made `bun.lockb` file
+- tried this just to check node version installed actually in this repoL
+
+```
+npm i -g create-next-app                   
+
+npm error code EEXIST
+npm error path /usr/local/bin/create-next-app
+npm error EEXIST: file already exists
+npm error File exists: /usr/local/bin/create-next-app
+npm error Remove the existing file and try again, or run npm
+npm error with --force to overwrite files recklessly.
+
+npm error A complete log of this run can be found in: /Users/ash/.npm/_logs/2024-05-10T13_13_07_293Z-debug-0.log
+```
+
+- so i think i'm good because i guess bun installed it and it was good enough. i could redo the whole install if i have any issues #key
+- now follow the next-app README 
 
 
+###### test running the app
+
+- only gives these so be careful with bun bc their readme is outdated #key
+
+```
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+```
+❯ bun run
+Usage: bun run [flags] <file or script>
+
+Flags:
+      --silent               Don't print the script command
+      --filter               Run a script in all workspace packages matching the pattern
+  -b, --bun                  Force a script or package to use Bun's runtime instead of Node.js (via symlinking node)
+      --shell                Control the shell used for package.json scripts. Supports either 'bun' or 'system'
+      --watch                Automatically restart the process on file change
+      --hot                  Enable auto reload in the Bun runtime, test runner, or bundler
+      --smol                 Use less memory, but run garbage collection more often
+  -r, --preload              Import a module before other modules are loaded
+      --inspect              Activate Bun's debugger
+      --inspect-wait         Activate Bun's debugger, wait for a connection before executing
+      --inspect-brk          Activate Bun's debugger, set breakpoint on first line of code and wait
+      --if-present           Exit without an error if the entrypoint does not exist
+      --no-install           Disable auto install in the Bun runtime
+      --install              Configure auto-install behavior. One of "auto" (default, auto-installs when no node_modules), "fallback" (missing packages only), "force" (always).
+  -i                         Auto-install dependencies during execution. Equivalent to --install=fallback.
+  -e, --eval                 Evaluate argument as a script
+      --print                Evaluate argument as a script and print the result
+      --prefer-offline       Skip staleness checks for packages in the Bun runtime and resolve from disk
+      --prefer-latest        Use the latest matching versions of packages in the Bun runtime, always checking npm
+  -p, --port                 Set the default port for Bun.serve
+      --conditions           Pass custom conditions to resolve
+      --main-fields          Main fields to lookup in package.json. Defaults to --target dependent
+      --extension-order      Defaults to: .tsx,.ts,.jsx,.js,.json
+      --tsconfig-override    Specify custom tsconfig.json. Default <d>$cwd<r>/tsconfig.json
+  -d, --define               Substitute K:V while parsing, e.g. --define process.env.NODE_ENV:"development". Values are parsed as JSON.
+  -l, --loader               Parse files with .ext:loader, e.g. --loader .js:jsx. Valid loaders: js, jsx, ts, tsx, json, toml, text, file, wasm, napi
+      --no-macros            Disable macros from being executed in the bundler, transpiler and runtime
+      --jsx-factory          Changes the function called when compiling JSX elements using the classic JSX runtime
+      --jsx-fragment         Changes the function called when compiling JSX fragments
+      --jsx-import-source    Declares the module specifier to be used for importing the jsx and jsxs factory functions. Default: "react"
+      --jsx-runtime          "automatic" (default) or "classic"
+      --env-file             Load environment variables from the specified file(s)
+      --cwd                  Absolute path to resolve files & entry points from. This just changes the process' cwd.
+  -c, --config               Specify path to Bun config file. Default <d>$cwd<r>/bunfig.toml
+  -h, --help                 Display this menu and exit
+
+Examples:
+  Run a JavaScript or TypeScript file
+  bun run ./index.js
+  bun run ./index.tsx
+
+  Run a package.json script
+  bun run dev
+  bun run lint
+
+Full documentation is available at https://bun.sh/docs/cli/run
+
+package.json scripts (4 found):
+  $ bun run dev
+    next dev
+
+  $ bun run build
+    next build
+
+  $ bun run start
+    next start
+
+  $ bun run lint
+    next lint
+```
+
+- no errors with prepping the bun dev env with `bun run`
+- `bun run dev` #todo note that in my final readme for portfolio
 
 
+```
+❯ bun run dev
+$ next dev
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 4.2s
+(node:35195) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ ○ Compiling / ...
+ ✓ Compiled / in 2.6s (532 modules)
+ GET / 200 in 2928ms
+ ✓ Compiled in 197ms (250 modules)
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 987ms (303 modules)
+ GET /favicon.ico 200 in 1054ms
 
 
+```
 
+- IT WORKED.
+- portfolio website (web app #key terminology) built locally!
 
-
-
-
-
-
-
-
-
-
-
+next:
+- push to main
+- check gh actions
+- check site
+- Get started by editing app/page.tsx
+- continue with the next-app-template 
 
 
 
