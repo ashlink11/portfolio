@@ -671,7 +671,7 @@ next steps:
 
 ## progress fri may 10
 
-```
+```bash
 node -v (need at least 18)
 
 v18.16.0
@@ -680,7 +680,7 @@ v18.16.0
 - npx, yarn, pnpm, or bun? try bun.
 - super interesting i can install bun with docker #key i could use that to demo backend dev skills (fullstack dev)
 
-```
+```bash
 brew install oven-sh/bun/bun
 
 bun create next-app
@@ -723,7 +723,7 @@ bun install v1.1.7 (b0b7db5c)
 - need updated node to update create-app
 - install via `.pkg` from node.js
 
-```
+```bash
 This package has installed:
 	•	Node.js v22.1.0 to /usr/local/bin/node
 	•	npm v10.7.0 to /usr/local/bin/npm
@@ -733,7 +733,7 @@ Make sure that /usr/local/bin is in your $PATH.
 - that made `bun.lockb` file
 - tried this just to check node version installed actually in this repoL
 
-```
+```bash
 npm i -g create-next-app                   
 
 npm error code EEXIST
@@ -754,7 +754,7 @@ npm error A complete log of this run can be found in: /Users/ash/.npm/_logs/2024
 
 - only gives these so be careful with bun bc their readme is outdated #key
 
-```
+
 ```bash
 npm run dev
 # or
@@ -763,7 +763,7 @@ yarn dev
 pnpm dev
 ```
 
-```
+```bash
 ❯ bun run
 Usage: bun run [flags] <file or script>
 
@@ -833,7 +833,7 @@ package.json scripts (4 found):
 - `bun run dev` #todo note that in my final readme for portfolio
 
 
-```
+```bash
 ❯ bun run dev
 $ next dev
   ▲ Next.js 14.2.3
@@ -850,8 +850,6 @@ $ next dev
  ○ Compiling /favicon.ico ...
  ✓ Compiled /favicon.ico in 987ms (303 modules)
  GET /favicon.ico 200 in 1054ms
-
-
 ```
 
 - IT WORKED.
@@ -863,6 +861,94 @@ next:
 - check site
 - Get started by editing app/page.tsx
 - continue with the next-app-template 
+
+
+- guess i have to reconfig the gh actions nextjs template. makes sense i guess.
+- instantly started building in gh actions when i pushed `nextjs.yml` to main
+- oh it failed because i didnt test building it locally lol i guess its been a while since frontend dev.
+- nextjs deploy docs:
+
+> The DPS Workflow: Develop, Preview, and Ship.
+
+> You should also update the following files:
+> public/images/profile.jpg with your photo (Recommended: 400px width/height).
+> const name = '[Your Name]' in components/layout.js with your name.
+> `<p>[Your Self Introduction]</p> in pages/index.js with your self introduction.`
+
+- aha. here was the create-app i was looking for: `npx create-next-app@latest nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/main/basics/basics-final"`
+- but i think i'm fine for now #key if needed to reinstall or want a better template. we'll see with v0.dev #todo
+- okay, here is `package.json` (i gathered the dependencies above from the terminal notes)
+
+```json
+{
+  "name": "test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "20.12.11",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.19",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.3",
+    "next": "14.2.3",
+    "postcss": "8.4.38",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tailwindcss": "3.4.3",
+    "typescript": "5.4.5"
+  }
+}
+```
+
+- okay YES, bun installed with node v20. great.
+- ohh interesting. bun is so new you cant build nextjs app with it yet. 
+  - their web docs: https://bun.sh/guides/ecosystem/nextjs 
+  - their gh docs: https://github.com/vercel/next.js/blob/canary/contributing/core/building.md 
+  - ^oh interesting. that has a wasm build #key
+
+> The Next.js App Router currently relies on Node.js APIs that Bun does not yet implement. The guide below uses Bun to initialize a project and install dependencies, but it uses Node.js to run the dev server.
+
+- their gh issues show `pnpm build`
+- i wonder how `pnpm` is compatible with `bun.lockb`
+- oh my god in the issues comment i found it's `bun run build`, not `bun build` okay awesome! yes.
+
+
+```bash
+❯ bun run build
+$ next build
+  ▲ Next.js 14.2.3
+
+   Creating an optimized production build ...
+(node:38993) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:39003) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ ✓ Compiled successfully
+ ✓ Linting and checking validity of types    
+ ✓ Collecting page data    
+ ✓ Generating static pages (5/5)
+ ✓ Collecting build traces    
+ ✓ Finalizing page optimization    
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    5.29 kB        92.2 kB
+└ ○ /_not-found                          871 B          87.8 kB
++ First Load JS shared by all            87 kB
+  ├ chunks/23-0627c91053ca9399.js        31.5 kB
+  ├ chunks/fd9d1056-2821b0f0cabcd8bd.js  53.6 kB
+  └ other shared chunks (total)          1.86 kB
+
+
+○  (Static)  prerendered as static content
+```
+
 
 
 
