@@ -682,12 +682,52 @@ v18.16.0
 ```
 brew install oven-sh/bun/bun
 
+bun create next-app
+
+# TypeScript, ESLint, Tailwind CSS, App Router
+dependencies:
+- react
+- react-dom
+- next
+- typescript
+- @types/react
+- @types/node
+- @types/react-dom
+- tailwindcss
+- postcss
+- autoprefixer
+- eslint
+- eslint-config-next
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'next@14.2.3',
+npm WARN EBADENGINE   required: { node: '>=18.17.0' },
+npm WARN EBADENGINE   current: { node: 'v18.16.0', npm: '9.6.7' }
+npm WARN EBADENGINE }
+
+
+# new 
+npm i -g create-next-app
+
+# then moved files up a layer
+
+bun install
+
+bun install v1.1.7 (b0b7db5c)
+[4.81ms] migrated lockfile from package-lock.json
+
+ 14 packages installed [365.00ms]
+
 ```
-TypeScript, ESLint, Tailwind, App Router
 
+- need updated node to update create-app
+- install via `.pkg` from node.js
 
-
-
+```
+This package has installed:
+	•	Node.js v22.1.0 to /usr/local/bin/node
+	•	npm v10.7.0 to /usr/local/bin/npm
+Make sure that /usr/local/bin is in your $PATH.
+```
 
 
 
