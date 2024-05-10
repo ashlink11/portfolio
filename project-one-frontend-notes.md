@@ -669,19 +669,21 @@ next steps:
 - got the nextjs yml file in my ashlink11 repo
 - monitoring the build
 
+## progress fri may 10
 
+```
+node -v (need at least 18)
 
+v18.16.0
+```
 
+- npx, yarn, pnpm, or bun? try bun.
 
+```
+brew install oven-sh/bun/bun
 
-
-
-
-
-
-
-
-
+```
+TypeScript, ESLint, Tailwind, App Router
 
 
 
