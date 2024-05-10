@@ -949,6 +949,7 @@ Route (app)                              Size     First Load JS
 ○  (Static)  prerendered as static content
 ```
 
+- okay, it built, that's great. #todo check the deprecation warnings (above), can use `node` to trace them in case the build gets messed up.
 
 
 
