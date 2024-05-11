@@ -1078,6 +1078,11 @@ jobs:
 
 
 
+## progress sat may 11, 2024
+
+- i noticed yesterday i mixed up the two repos so make sure i put the local build that works into ashlink11 repo
+- been doing other stuff today and planning to loop around to this again in a bit so i can complete my weekly goal of the website build done and hosted on gh pages, not just working on my machine from yesterday 
+
 
 
 
