@@ -1084,6 +1084,8 @@ jobs:
 - been doing other stuff today and planning to loop around to this again in a bit so i can complete my weekly goal of the website build done and hosted on gh pages, not just working on my machine from yesterday 
 
 
+## sun may 12, 2024
+- alright i really dont feel like doing the build today just because i've got other stuff to do, but i'm really excited to do it tomorrow. plus, i'm ahead of timeline in general, so it's okay.
 
 
 
