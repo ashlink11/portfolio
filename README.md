@@ -412,8 +412,14 @@ detailed 5.1: (for the rest of the week)
   - debug yesterdays if i didnt get the build done
   - or plan next week (5.2)
 
-
-
+detailed 5.2: (25m/day because all of may is 25m a day goal because there's other foundation like 530am wakeups, yoga, lifting, and 4 classes this 2 month term which is may-june; also i'm ahead of timeline enough) 
+- sun: day off
+- mon: (today) planning week
+- tues: attempt site build on gh hosting (yml file manual rewrite attempt one - see what chatgpt and gemini say bc i havent tried them yet)
+- wed: either continue tues work or study gh configs more or see where i'm at
+- thurs: tbd
+- fri: tbd
+- sat: tbd
 
 
 
