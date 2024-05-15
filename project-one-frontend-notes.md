@@ -1171,6 +1171,80 @@ next steps:
 - use #todonext tags for very next steps
   
 
+## progress wed may 15, 2024
+
+- rest of nextjs yml config:
+
+```yml
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Build with Next.js
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+- cache: that's good it's clearing the cache every time so i don't have to manually, which i wouldn't even be able to.
+- dependencies: these commands don't look familiar, but i'll have to figure out where those functions come from. i guess in the package manager source code? #todonext
+- artifacts: i guess this is where all the extra code & assets are stored: images, setup scripts, css, source code, built code, etc.
+- deploy is a different job from the rest. specifies gh pages i the env
+
+all #todonexts from past two days:
+- yarn is package manager. change this to bun and install bun on the box. (#todonext)
+- then set up node. make sure bun uses node (#todonext) and check that bun is compatible with node (#todonext)
+- then set up pages. make sure pages is compatible with bun (#todonext)
+- otherwise, reinstall entire project with yarn, and if that doesnt work, npm
+- note: doesn't seem like it'll work with React Server Components (#todonext) - check on this because i assume v0.dev uses that. but idk. but there is an option to manage the configure it myself (#todonext) which would be preferrable since i want to use latest React features.
+- dependencies: these commands don't look familiar, but i'll have to figure out where those functions come from. i guess in the package manager source code? #todonext
+
+next steps in simple terms:
+- check if bun is compatible with node and gh pages & try to config bun because it's latest package manager
+- if not, yarn or npm instead of bun
+- research if this config template works with React Server Components and if v0.dev uses React Server Components
+- research where the dependency install commands come from
+- at each step: research each bash command
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
