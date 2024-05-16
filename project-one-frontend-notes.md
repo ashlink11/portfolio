@@ -1228,9 +1228,17 @@ next steps in simple terms:
 - research where the dependency install commands come from
 - at each step: research each bash command
 
+## progress th may 16, 2024
 
+- these are the two most important lines in the yml i think:
 
-
+```yml
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Build with Next.js
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+```
+- looks like all these functions are in the package manager and the variables like steps and manager are part of the yml variables
 
 
 
