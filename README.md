@@ -368,12 +368,12 @@ next steps:
 detailed may-june github/website plan:
 (format: month.week, e.g. first week of may is 5.1)
 
-###### meta-level
+###### meta-level (updated end of week 5.2)
 
-5.1: site backend - finish the build
-5.2: site frontend - mvp: bio (home) & p1 pages (remember to use canva)
-5.3: site frontend - draft tw p1 page
-5.4: project two backend - code
+5.1: site backend - get local build working (done)
+5.2: site backend - get remote build working on github.io (done)
+5.3: site frontend - mvp: bio (home) & p1 pages (remember to use canva)
+5.4: site frontend - draft tw p1 page
 6.1: project two backend - code
 6.2: project two backend - code
 6.3: site frontend - project two
