@@ -1240,9 +1240,46 @@ next steps in simple terms:
 ```
 - looks like all these functions are in the package manager and the variables like steps and manager are part of the yml variables
 
+## progress sat may 18, 2024:
 
+- this is the code i need to try to change first:
 
+```yml
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+            exit 0
+```
 
+- trying this first:
+
+```yml
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+            exit 0
+
+```
+
+- first i tried running the origin nextjs.yml in a git repo because i hadn't yet. also because i noticed bun used npm to instead create-next-app, so i can't use bun clearly.
+
+```
+build
+failed 2 minutes ago in 5s
+Search logs
+2s
+0s
+0s
+1s
+0s
+Run actions/configure-pages@v5
+Error: Get Pages site failed. Please verify that the repository has Pages enabled and configured to build using GitHub Actions, or consider exploring the `enablement` parameter for this action. Error: Not Found - https://docs.github.com/rest/pages/pages#get-a-apiname-pages-site
+Error: HttpError: Not Found - https://docs.github.com/rest/pages/pages#get-a-apiname-pages-site
+```
+
+- github actions showed this^
 
 
 
