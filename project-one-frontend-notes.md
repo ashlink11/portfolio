@@ -1281,7 +1281,7 @@ Error: HttpError: Not Found - https://docs.github.com/rest/pages/pages#get-a-api
 
 - github actions showed this^
 
-
+- when i created nextjs.yml from Settings > Pages instead of actions it built the site. so, website build is done.
 
 
 
