@@ -476,6 +476,25 @@ ben run app.bend // 1 hour
 bend run-c app.bend // uses all 24 threads on cpu, 30 seconds
 bend run-cu app.bend // 1.5 seconds, 16,384 CUDA cores, nvidia rtx 4090
 
+## progress sun may 19, 2024
+
+todo:
+- update url to remove the last `/ashlink11`
+
+week 5.3 plan:
+- goal: make draft one of website frontend and push it live
+  - design ui including canva
+    - finalize project page layout
+    - create draft one home page layout
+    - plan all canva diagrams by choosing canva elements, otherwise i will need an alternative to canva
+  - use v0.dev or find an alternative or create from scratch with react, perhaps using figma, although that might take a lot of time
+- sun: plan week
+- mon: finalize project page layout
+- tues: create draft one home page layout
+- wed: plan all canva diagrams
+- fri: use v0.dev & push live
+- sat: use v0.dev & push live
+
 
 
 
