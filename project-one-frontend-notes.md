@@ -1283,7 +1283,19 @@ Error: HttpError: Not Found - https://docs.github.com/rest/pages/pages#get-a-api
 
 - when i created nextjs.yml from Settings > Pages instead of actions it built the site. so, website build is done.
 
+## progress mon may 20, 2024
 
+- today's goal: finalize project page layout
+- i took at look at draft two of the projects ui layout
+- it looks good for desktop and not as good mobile
+- i do want to make the diagrams decently complicated, so i guess the home page will just have to look good on mobile
+- i will want to test it on small laptop as well as largest size monitor screens
+- ui sidenote: i am doubting dark mode actually. i think light mode is more professional and daytime.
+- i want it to look like a customized Medium article ideally.
+- make sure i add the date of the article my name somewhere on the page like right side of nav bar i think.
+- no sticky nav bar is fine because its too risky to be janky and annoying and plus the project pages won't be that long.
+- i could split the two middle diagrams into left and right in-line with the text actually to add interest and give context about where you are on the page and make it cognitively easier because those diagrams will of course be simpler. but again that has to instead stack on mobile but should otherwise look fine. #todonext for tomorrow/this week.
+- otherwise, that's a good start and is third draft, so time to build it and see what it looks like.
 
 
 
