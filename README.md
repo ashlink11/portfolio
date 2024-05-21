@@ -421,60 +421,53 @@ detailed 5.2: (25m/day because all of may is 25m a day goal because there's othe
 - fri: tbd
 - sat: tbd
 
-## notes fri may 17 for project three
+## notes fri may 17 for project three (updated tues may 21)
 
 new fireship bend video https://www.youtube.com/watch?v=HCOQmKTFzYY
 
-cuda blocks locks mutexes regexes
-
-24 cpu cores
-16k gpu cores
-
-python single threaded
-
-clock cycle around 4GHz
-1 inst / cycle
-4b inst/sec four gips 
-
-python has threading.Thread()
-complexity
-
-race condi
-deadlocks
-threaq starvations
-daemon conflict
-
-maybe cpu doesnt have enough juice : diagram with (core, l1 cache, control)x4, l2 cache x2, l3 cache, dram, etc.
-
-thousands of cuda cores 
-cpp
-
-python converted to bytecode and run on PVM
-
-bend -
-elements of computation structured into a graph (network)
-interaction combinators
-when two nodes run into each other, follow simple set of rules that rewrites computation to run in parallel until all merged then runs and returns
-
-yves lafont paper 1990s interaction combinators
-
-HVM2 higher order VM on github
-not meant to be used directly
-bend interfaces with it
-bend implemented in rust
-syntax similar to python
-
-uses rust interpreter single threaded
-
-bend has no loops, instead has fold
-search and replace for data types
-consume recursive data types in parallel like a list or a tree
-first construct recursive data type called bend
-bend is opp of fold
-
-ben run app.bend // 1 hour
-bend run-c app.bend // uses all 24 threads on cpu, 30 seconds
-bend run-cu app.bend // 1.5 seconds, 16,384 CUDA cores, nvidia rtx 4090
+- cuda blocks locks mutexes regexes
+  - 24 cpu cores
+  - 16k gpu cores
+- python single threaded
+  - clock cycle around 4GHz
+  - 1 inst / cycle
+  - 4b inst/sec four gips
+  - python has threading.Thread(), huge complexity though
+- parallelism gotchas:
+  - race conditions
+  - deadlocks
+  - thread starvations
+  - daemon conflicts
+- maybe cpu doesnt have enough juice
+  - diagram with core, l1 cache, control)x4, l2 cache x2, l3 cache, dram, etc.
+  - thousands of cuda cores
+  - cpp though.
+- python converted to bytecode and run on PVM
+- bend:
+  - elements of computation structured into a graph (network)
+  - interaction combinators
+  - when two nodes run into each other, follow simple set of rules that rewrites computation to run in parallel until all merged then runs and returns
+  - yves lafont paper 1990s interaction combinators
+  - HVM2 higher order VM on github
+    - not meant to be used directly
+    - bend interfaces with it
+  - bend implemented in rust
+  - syntax similar to python
+  - uses rust interpreter single threaded
+  - bend has no loops, instead has fold
+    - notes not from this video:
+      - fold == reduce
+      - catamorphic structure
+      - makes a list of lists into a list
+      - there's double fold, fold, and bend?
+    - search and replace for data types
+    - consume recursive data types in parallel like a list or a tree
+    - first construct recursive data type called bend
+    - bend is opp of fold
+  - perf testing
+    - ben run app.bend // 1 hour
+    - bend run-c app.bend // uses all 24 threads on cpu, 30 seconds
+    - bend run-cu app.bend // 1.5 seconds, 16,384 CUDA cores, nvidia rtx 4090
 
 ## progress sun may 19, 2024
 
