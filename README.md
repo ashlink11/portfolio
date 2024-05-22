@@ -1,16 +1,16 @@
 # portfolio
 
 ## project one:
-- (completed) [project one config notes](./project-one-config-notes.md)
-- (completed) [project one advanced llvm notes](./project-one-advanced-llvm-notes.md)
-- (in progress) [project one summary notes](./project-one-summary-notes.md)
-- (in progress) [project one frontend notes](./project-one-frontend-notes.md)
+- (completed) [project one config notes](./addtl-readme-docs/project-one-config-notes.md)
+- (completed) [project one advanced llvm notes](./addtl-readme-docs/project-one-advanced-llvm-notes.md)
+- (in progress) [project one summary notes](./addtl-readme-docs/project-one-summary-notes.md)
+- (in progress) [project one frontend notes](./addtl-readme-docs/project-one-frontend-notes.md)
 
 ## project two:
-- (in progress) [project two plan notes](./project-two-plan-notes.md)
+- (in progress) [project two plan notes](./addtl-readme-docs/project-two-plan-notes.md)
 
 ## project three:
-- (in progress) [project three plan notes](./project-three-plan-notes.md)
+- (in progress) [project three plan notes](./addtl-readme-docs/project-three-plan-notes.md)
 
 
 ## overall strategy:
