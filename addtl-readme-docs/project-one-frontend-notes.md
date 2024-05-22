@@ -1298,6 +1298,15 @@ Error: HttpError: Not Found - https://docs.github.com/rest/pages/pages#get-a-api
 - otherwise, that's a good start and is third draft, so time to build it and see what it looks like.
 
 
+## progress wed may 22
+
+- goal: create draft one home page layout (done)
+- image saved in assets
+- actually i want the same layout as my old portfolio from 2020, so i can show how i've evolved this open-source software over time to show minimal frontend skills (since i'm not applying to be a frontend dev anymore)
+- wondering if i have a screenshot of my old portfolio to see the comparison. but it really don't matter too much. #todo-not-essential
+- but i can take a look at the old html and css for the responsive layout cause i made it by hand #todokey
+
+
 
 
 
