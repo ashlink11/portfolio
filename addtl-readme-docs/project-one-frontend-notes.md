@@ -1307,7 +1307,8 @@ Error: HttpError: Not Found - https://docs.github.com/rest/pages/pages#get-a-api
 - but i can take a look at the old html and css for the responsive layout cause i made it by hand #todokey
 
 
-next goal: plan all canva diagrams
+next goal: plan all canva diagrams, but for the next day just project one diagram one so its not as much as trying to do all 4 p1 diagrams in one day
+
 
 
 
