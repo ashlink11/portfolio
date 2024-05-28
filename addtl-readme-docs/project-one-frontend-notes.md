@@ -1309,7 +1309,9 @@ Error: HttpError: Not Found - https://docs.github.com/rest/pages/pages#get-a-api
 
 next goal: plan all canva diagrams, but for the next day just project one diagram one so its not as much as trying to do all 4 p1 diagrams in one day
 
-
+## progress mon may 27
+- i only have this week til saturday left of free canva pro so gotta get moving on it
+-  
 
 
 
