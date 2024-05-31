@@ -25,7 +25,7 @@
 
 ## meta-level frontend ui/ux and content
 
-#### ui/ux
+#### ui/ux 
 
 - TL;DRs & minimalistic text content always
 - original lucidchart diagrams (w simple titles) for:
