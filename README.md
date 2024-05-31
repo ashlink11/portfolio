@@ -1,6 +1,6 @@
 # portfolio
 
-## project one:
+## project one: 
 - (completed) [project one config notes](./addtl-readme-docs/project-one-config-notes.md)
 - (completed) [project one advanced llvm notes](./addtl-readme-docs/project-one-advanced-llvm-notes.md)
 - (in progress) [project one summary notes](./addtl-readme-docs/project-one-summary-notes.md)
