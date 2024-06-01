@@ -6,7 +6,7 @@
 - (in progress) [project one summary notes](./addtl-readme-docs/project-one-summary-notes.md)
 - (in progress) [project one frontend notes](./addtl-readme-docs/project-one-frontend-notes.md)
 
-## project two:
+## project two: 
 - (in progress) [project two plan notes](./addtl-readme-docs/project-two-plan-notes.md)
 
 ## project three:
