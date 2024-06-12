@@ -1318,7 +1318,9 @@ next goal: plan all canva diagrams, but for the next day just project one diagra
 - reviewing my p1 all concepts overview diagram: https://github.com/ashlink11/portfolio/blob/main/assets/apr-17-p1-p2-p3-stacks-and-p1-components.jpg and diagram 1 draft 1 https://github.com/ashlink11/portfolio/blob/main/assets/apr-13-project-one-visual-one-draft-one.jpg
 - today: made p1 diagram1 draft2, it's here: https://github.com/ashlink11/portfolio/blob/main/assets/june-11-p1-diagram1-draft2.JPG
 
+## w june 11
 
+- next: get my old portfolio website code and transfer it to react, then try v0.dev
 
 
 
