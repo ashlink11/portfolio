@@ -1328,8 +1328,7 @@ next goal: plan all canva diagrams, but for the next day just project one diagra
 - next steps are to make a test light theme with those colors.
 - that'll make testing out v0.dev more fun and i wont have to redo it later.
 - note: i updated the assets names so they're better organize but that will ahve broken some links throughout these notes. thats fine bc im planning to clean up the repo anyway before apps.
-- note: as for the classic 60s car photo, i did initially like the photo cause it seems like a similar palette but i really hate that its a salmon color palette. but im keeping it in there for awareness and so i remember to avoid it.
-
+- note: deleted the color palette working on a draft two for later
 
 
 
