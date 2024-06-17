@@ -1330,6 +1330,10 @@ next goal: plan all canva diagrams, but for the next day just project one diagra
 - note: i updated the assets names so they're better organize but that will ahve broken some links throughout these notes. thats fine bc im planning to clean up the repo anyway before apps.
 - note: deleted the color palette working on a draft two for later
 
+## sun june 16
+- finally tried out v0.dev which makes everything so easy
+- i generated a demo and i'm happy with it
+- next step: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
 
 
 
