@@ -488,7 +488,7 @@ week 5.3 plan:
 - fri: use v0.dev & push live
 - sat: use v0.dev & push live
 
-
+## tues june 18: next: redo timeline & make monthly, weekly plans for projects
 
 
 
