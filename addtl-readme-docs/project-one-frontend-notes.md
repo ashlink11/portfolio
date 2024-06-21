@@ -1335,7 +1335,8 @@ next goal: plan all canva diagrams, but for the next day just project one diagra
 - i generated a demo and i'm happy with it
 - next step: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
 
-
+## th june 20
+- i cloned the v0.dev library and the install worked, just figuring out how to run the dev env next
 
 
 
