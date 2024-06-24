@@ -1338,6 +1338,8 @@ next goal: plan all canva diagrams, but for the next day just project one diagra
 ## th june 20
 - i cloned the v0.dev library and the install worked, just figuring out how to run the dev env next
 
+## sun june 23
+- am able to run the v0 test locally with `npm run dev` but i dont see the installed component. just looks like a next.js template. will keep following this next https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
 
 
 
