@@ -490,7 +490,9 @@ week 5.3 plan:
 
 ## tues june 18: next: redo timeline & make monthly, weekly plans for projects
 
-
+## mon june 24
+- okay ive been feeling meh on making the website. its not difficult ive just not had a good routine.
+- i think next i should study the code for fun
 
 
 
