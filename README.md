@@ -494,6 +494,13 @@ week 5.3 plan:
 - okay ive been feeling meh on making the website. its not difficult ive just not had a good routine.
 - i think next i should study the code for fun
 
+## tues june 25
+- defining portfolio goals:
+  - pursue projects to be able to study lots of hardware-adjacent software topics including basic knowledge of hardware and keep my full-stack knowledge fresh
+  - with p3, demonstrate useful working code
+- so, right now, working on the portfolio site is useful to keep my frontend skills fresh
+- next p2 can just be fun studying really and getting basic code working
+- and thatll save me time to make p3 more difficult with writing more code
 
 
 
