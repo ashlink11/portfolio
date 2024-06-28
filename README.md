@@ -502,8 +502,8 @@ week 5.3 plan:
 - next p2 can just be fun studying really and getting basic code working
 - and thatll save me time to make p3 more difficult with writing more code
 
-wed june 26: feeling very tired. gotta start making this part of my morning routine again cause that worked well and do 25m m-f, 1-3 hours on saturdays and day off on sundays
-thurs june 27: i've been working on my schedule and when i get it worked out, i'll get around to the portfolio schedule
+#### wed june 26: feeling very tired. gotta start making this part of my morning routine again cause that worked well and do 25m m-f, 1-3 hours on saturdays and day off on sundays
+#### thurs june 27: i've been working on my schedule and when i get it worked out, i'll get around to the portfolio schedule
 
 
 
