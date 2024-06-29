@@ -504,7 +504,7 @@ week 5.3 plan:
 
 #### wed june 26: feeling very tired. gotta start making this part of my morning routine again cause that worked well and do 25m m-f, 1-3 hours on saturdays and day off on sundays
 #### thurs june 27: i've been working on my schedule and when i get it worked out, i'll get around to the portfolio schedule
-
+#### fri june 28: plan is to take the next two days off and then mondays will be porfolio planning days, tu-fr incremental updates, and saturdays longer creative fun days
 
 
 
