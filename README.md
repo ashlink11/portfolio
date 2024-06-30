@@ -506,6 +506,17 @@ week 5.3 plan:
 #### thurs june 27: i've been working on my schedule and when i get it worked out, i'll get around to the portfolio schedule
 #### fri june 28: plan is to take the next two days off and then mondays will be porfolio planning days, tu-fr incremental updates, and saturdays longer creative fun days
 
+#### sat june 29:
+weekly plan:
+- sundays: rest day
+- mon: 1hr plan wk
+- tues: 1hr focus
+- wed: 1hr focus
+- thurs: 1hr focus
+- fri: 1hr focus
+- sat: 1-3hrs focus, creativity, backlog, big progress push
+
+- i will need 1hr to actually get set up i think. i think 25m/day mon-fri is unrealistic.
 
 
 
