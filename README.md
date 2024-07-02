@@ -521,6 +521,8 @@ weekly plan:
 #### mon july 1: 
 - still have higher priorities than this. have been making great progress on this today, just not stuff i would post publicly. (re: specifically learning exact technology versions goals & which pertain to which job posting & cross-referencing them)
 
+#### tues july 2:
+- still have higher priorities. will know by or on this sunday when i plan to start up again.
 
 
 
