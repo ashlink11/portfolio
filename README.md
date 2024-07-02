@@ -518,6 +518,10 @@ weekly plan:
 
 - i will need 1hr to actually get set up i think. i think 25m/day mon-fri is unrealistic.
 
+#### mon july 1: 
+- still have higher priorities than this. have been making great progress on this today, just not stuff i would post publicly. (re: specifically learning exact technology versions goals & which pertain to which job posting & cross-referencing them)
+
+
 
 
 
