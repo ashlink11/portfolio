@@ -524,6 +524,9 @@ weekly plan:
 #### tues july 2:
 - still have higher priorities. will know by or on this sunday when i plan to start up again.
 
+#### wed july 3:
+- ive made progress with priorities! just a few more other things to do.
+
 
 
 
