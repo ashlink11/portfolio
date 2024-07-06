@@ -530,7 +530,9 @@ weekly plan:
 #### fri july 5:
 - planning to restart on monday.
 
-
+#### sat july 6:
+- tomorrow is off
+- monday is high-level & this week planning day (time capped to 1 hour)
 
 
 
