@@ -527,7 +527,8 @@ weekly plan:
 #### wed july 3:
 - ive made progress with priorities! just a few more other things to do.
 
-
+#### fri july 5:
+- planning to restart on monday.
 
 
 
