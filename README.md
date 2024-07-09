@@ -438,7 +438,7 @@ new fireship bend video https://www.youtube.com/watch?v=HCOQmKTFzYY
   - deadlocks
   - thread starvations
   - daemon conflicts
-- maybe cpu doesnt have enough juice
+- maybe cpu doesnt have enough juice (cpu study hardware study)
   - diagram with core, l1 cache, control)x4, l2 cache x2, l3 cache, dram, etc.
   - thousands of cuda cores
   - cpp though.
