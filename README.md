@@ -534,6 +534,8 @@ weekly plan:
 - tomorrow is off
 - monday is high-level & this week planning day (time capped to 1 hour)
 
+#### mon july 8
+- didnt get to this today but tomorrow for sure committed
 
 
 
