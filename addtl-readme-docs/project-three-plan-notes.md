@@ -30,7 +30,7 @@
   - what do architects need?
 - cloud distribution at scale: (training & inference)
   - is there a nvidia cloud platform?
-  - (& Modular)
+  - (& Modular; or is Modular an ML framework? or both? #todo)
   - (etc.)  
 
 - next steps:

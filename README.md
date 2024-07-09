@@ -538,7 +538,12 @@ weekly plan:
 - didnt get to this today but tomorrow for sure committed
 
 
-
+#### tues july 9
+notes in my dev env:
+```
+The Mojo🔥 development environment was not found. If the Mojo SDK is installed, please set the MODULAR_HOME environment variable to the appropriate path, or set the `mojo.modularHomePath` configuration. If you do not have it installed, would you like to install it?
+```
+also: i'm not signed into gh in VSCode but it might helpful for gh actions workflows in case i need to modify that
 
 
 
