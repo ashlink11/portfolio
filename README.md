@@ -548,7 +548,8 @@ also: i'm not signed into gh in VSCode but it might helpful for gh actions workf
 #### wed july 10:
 - i do have a few more priority things to work on. hope i can get to this by friday or saturday.
 
-
+#### th july 11:
+- actually in this restart of the portfolio now i'm also planning to do a minimalism clean out and organization of the repo notes & files so that's the next week's plan
 
 
 
