@@ -545,6 +545,8 @@ The Mojo🔥 development environment was not found. If the Mojo SDK is installed
 ```
 also: i'm not signed into gh in VSCode but it might helpful for gh actions workflows in case i need to modify that
 
+#### wed july 10:
+- i do have a few more priority things to work on. hope i can get to this by friday or saturday.
 
 
 
