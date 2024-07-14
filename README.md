@@ -551,7 +551,9 @@ also: i'm not signed into gh in VSCode but it might helpful for gh actions workf
 #### th july 11:
 - actually in this restart of the portfolio now i'm also planning to do a minimalism clean out and organization of the repo notes & files so that's the next week's plan
 
-
+#### sat july 13:
+- cant decide if ill clean up the high-level portfolio documentation before project 1 documentation or vice versa
+- ill read more of and then map out all the documentation and then see what makes sense
 
 
 
