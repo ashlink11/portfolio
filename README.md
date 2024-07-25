@@ -1,4 +1,4 @@
-# portfolio  
+# portfolio   
 
 ## project one: 
 - (completed) [project one config notes](./addtl-readme-docs/project-one-config-notes.md)
